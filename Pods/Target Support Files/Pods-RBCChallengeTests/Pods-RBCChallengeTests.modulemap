@@ -1,0 +1,6 @@
+framework module Pods_RBCChallengeTests {
+  umbrella header "Pods-RBCChallengeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

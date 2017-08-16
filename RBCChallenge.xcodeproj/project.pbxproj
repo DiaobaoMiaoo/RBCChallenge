@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		23AF4C53A0CA08951F818A5F /* Pods_RBCChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72EAEDA4D51A3690D2638257 /* Pods_RBCChallenge.framework */; };
+		4D8146021F44A2C100696404 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146011F44A2C100696404 /* Business.swift */; };
+		4D8146041F44CA5100696404 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146031F44CA5100696404 /* Review.swift */; };
+		4DDF5F031F436E5F0066EC85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF5F021F436E5F0066EC85 /* AppDelegate.swift */; };
+		4DDF5F051F436E5F0066EC85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF5F041F436E5F0066EC85 /* ViewController.swift */; };
+		4DDF5F081F436E5F0066EC85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF5F061F436E5F0066EC85 /* Main.storyboard */; };
+		4DDF5F0B1F436E5F0066EC85 /* RBCChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF5F091F436E5F0066EC85 /* RBCChallenge.xcdatamodeld */; };
+		4DDF5F0D1F436E5F0066EC85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF5F0C1F436E5F0066EC85 /* Assets.xcassets */; };
+		4DDF5F101F436E5F0066EC85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF5F0E1F436E5F0066EC85 /* LaunchScreen.storyboard */; };
+		4DDF5F1B1F436E5F0066EC85 /* RBCChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF5F1A1F436E5F0066EC85 /* RBCChallengeTests.swift */; };
+		4DDF5F481F4371A20066EC85 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF5F471F4371A20066EC85 /* YelpClient.swift */; };
+		4DDF5F4C1F449A200066EC85 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF5F4A1F449A200066EC85 /* KeychainConfiguration.swift */; };
+		4DDF5F4D1F449A200066EC85 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF5F4B1F449A200066EC85 /* KeychainPasswordItem.swift */; };
+		4DDF5F501F44A0E90066EC85 /* LocationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF5F4F1F44A0E90066EC85 /* LocationClient.swift */; };
+		E5CDD956F46741FC33DCFF73 /* Pods_RBCChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A0085B57840269F024A316 /* Pods_RBCChallengeTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4DDF5F171F436E5F0066EC85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4DDF5EF71F436E5F0066EC85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4DDF5EFE1F436E5F0066EC85;
+			remoteInfo = RBCChallenge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01ECB1FEC42D553A4D6905B0 /* Pods-RBCChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RBCChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RBCChallengeTests/Pods-RBCChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		4D8146011F44A2C100696404 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		4D8146031F44CA5100696404 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		4DDF5EFF1F436E5F0066EC85 /* RBCChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RBCChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DDF5F021F436E5F0066EC85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4DDF5F041F436E5F0066EC85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4DDF5F071F436E5F0066EC85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4DDF5F0A1F436E5F0066EC85 /* RBCChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RBCChallenge.xcdatamodel; sourceTree = "<group>"; };
+		4DDF5F0C1F436E5F0066EC85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4DDF5F0F1F436E5F0066EC85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4DDF5F111F436E5F0066EC85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DDF5F161F436E5F0066EC85 /* RBCChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RBCChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DDF5F1A1F436E5F0066EC85 /* RBCChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBCChallengeTests.swift; sourceTree = "<group>"; };
+		4DDF5F1C1F436E5F0066EC85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DDF5F471F4371A20066EC85 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
+		4DDF5F4A1F449A200066EC85 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
+		4DDF5F4B1F449A200066EC85 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
+		4DDF5F4F1F44A0E90066EC85 /* LocationClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationClient.swift; sourceTree = "<group>"; };
+		72EAEDA4D51A3690D2638257 /* Pods_RBCChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RBCChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8380EA2DEB9FDC462E1B8F52 /* Pods-RBCChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RBCChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-RBCChallenge/Pods-RBCChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		E783689524B1C5D123560E81 /* Pods-RBCChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RBCChallengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RBCChallengeTests/Pods-RBCChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F0A0085B57840269F024A316 /* Pods_RBCChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RBCChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F53F57DCEFAD74115B73AF69 /* Pods-RBCChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RBCChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RBCChallenge/Pods-RBCChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4DDF5EFC1F436E5F0066EC85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23AF4C53A0CA08951F818A5F /* Pods_RBCChallenge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DDF5F131F436E5F0066EC85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5CDD956F46741FC33DCFF73 /* Pods_RBCChallengeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D3C916B74319DD68BB5D181 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72EAEDA4D51A3690D2638257 /* Pods_RBCChallenge.framework */,
+				F0A0085B57840269F024A316 /* Pods_RBCChallengeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D8146001F44A2A800696404 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				4D8146011F44A2C100696404 /* Business.swift */,
+				4D8146031F44CA5100696404 /* Review.swift */,
+			);
+			name = Modal;
+			sourceTree = "<group>";
+		};
+		4DDF5EF61F436E5F0066EC85 = {
+			isa = PBXGroup;
+			children = (
+				4DDF5F011F436E5F0066EC85 /* RBCChallenge */,
+				4DDF5F191F436E5F0066EC85 /* RBCChallengeTests */,
+				4DDF5F001F436E5F0066EC85 /* Products */,
+				F943A4F7378FA7841872B942 /* Pods */,
+				3D3C916B74319DD68BB5D181 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4DDF5F001F436E5F0066EC85 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4DDF5EFF1F436E5F0066EC85 /* RBCChallenge.app */,
+				4DDF5F161F436E5F0066EC85 /* RBCChallengeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4DDF5F011F436E5F0066EC85 /* RBCChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				4DDF5F451F43718D0066EC85 /* Common */,
+				4DDF5F491F4498BE0066EC85 /* ThirdParty */,
+				4DDF5F021F436E5F0066EC85 /* AppDelegate.swift */,
+				4DDF5F041F436E5F0066EC85 /* ViewController.swift */,
+				4DDF5F061F436E5F0066EC85 /* Main.storyboard */,
+				4DDF5F0C1F436E5F0066EC85 /* Assets.xcassets */,
+				4DDF5F0E1F436E5F0066EC85 /* LaunchScreen.storyboard */,
+				4DDF5F111F436E5F0066EC85 /* Info.plist */,
+				4DDF5F091F436E5F0066EC85 /* RBCChallenge.xcdatamodeld */,
+			);
+			path = RBCChallenge;
+			sourceTree = "<group>";
+		};
+		4DDF5F191F436E5F0066EC85 /* RBCChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				4DDF5F1A1F436E5F0066EC85 /* RBCChallengeTests.swift */,
+				4DDF5F1C1F436E5F0066EC85 /* Info.plist */,
+			);
+			path = RBCChallengeTests;
+			sourceTree = "<group>";
+		};
+		4DDF5F451F43718D0066EC85 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4D8146001F44A2A800696404 /* Modal */,
+				4DDF5F461F4371920066EC85 /* Networking */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		4DDF5F461F4371920066EC85 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4DDF5F471F4371A20066EC85 /* YelpClient.swift */,
+				4DDF5F4F1F44A0E90066EC85 /* LocationClient.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		4DDF5F491F4498BE0066EC85 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				4DDF5F4E1F449A240066EC85 /* KeyChain */,
+			);
+			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		4DDF5F4E1F449A240066EC85 /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				4DDF5F4A1F449A200066EC85 /* KeychainConfiguration.swift */,
+				4DDF5F4B1F449A200066EC85 /* KeychainPasswordItem.swift */,
+			);
+			name = KeyChain;
+			sourceTree = "<group>";
+		};
+		F943A4F7378FA7841872B942 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F53F57DCEFAD74115B73AF69 /* Pods-RBCChallenge.debug.xcconfig */,
+				8380EA2DEB9FDC462E1B8F52 /* Pods-RBCChallenge.release.xcconfig */,
+				E783689524B1C5D123560E81 /* Pods-RBCChallengeTests.debug.xcconfig */,
+				01ECB1FEC42D553A4D6905B0 /* Pods-RBCChallengeTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4DDF5EFE1F436E5F0066EC85 /* RBCChallenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DDF5F1F1F436E5F0066EC85 /* Build configuration list for PBXNativeTarget "RBCChallenge" */;
+			buildPhases = (
+				240B88DF11AEF8AD6C6F9176 /* [CP] Check Pods Manifest.lock */,
+				4DDF5EFB1F436E5F0066EC85 /* Sources */,
+				4DDF5EFC1F436E5F0066EC85 /* Frameworks */,
+				4DDF5EFD1F436E5F0066EC85 /* Resources */,
+				55C4ECFF50B37596E9B2AB24 /* [CP] Embed Pods Frameworks */,
+				44300C9C6122F101943CF544 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RBCChallenge;
+			productName = RBCChallenge;
+			productReference = 4DDF5EFF1F436E5F0066EC85 /* RBCChallenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4DDF5F151F436E5F0066EC85 /* RBCChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DDF5F221F436E5F0066EC85 /* Build configuration list for PBXNativeTarget "RBCChallengeTests" */;
+			buildPhases = (
+				211182CB2AE429701F66773F /* [CP] Check Pods Manifest.lock */,
+				4DDF5F121F436E5F0066EC85 /* Sources */,
+				4DDF5F131F436E5F0066EC85 /* Frameworks */,
+				4DDF5F141F436E5F0066EC85 /* Resources */,
+				1005C5385FDDD1CFA400C7F7 /* [CP] Embed Pods Frameworks */,
+				09A6B50BC33CB67392A7DDE0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4DDF5F181F436E5F0066EC85 /* PBXTargetDependency */,
+			);
+			name = RBCChallengeTests;
+			productName = RBCChallengeTests;
+			productReference = 4DDF5F161F436E5F0066EC85 /* RBCChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4DDF5EF71F436E5F0066EC85 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Kemin;
+				TargetAttributes = {
+					4DDF5EFE1F436E5F0066EC85 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 57B8H4VJ56;
+						ProvisioningStyle = Automatic;
+					};
+					4DDF5F151F436E5F0066EC85 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 57B8H4VJ56;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4DDF5EFE1F436E5F0066EC85;
+					};
+				};
+			};
+			buildConfigurationList = 4DDF5EFA1F436E5F0066EC85 /* Build configuration list for PBXProject "RBCChallenge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4DDF5EF61F436E5F0066EC85;
+			productRefGroup = 4DDF5F001F436E5F0066EC85 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4DDF5EFE1F436E5F0066EC85 /* RBCChallenge */,
+				4DDF5F151F436E5F0066EC85 /* RBCChallengeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4DDF5EFD1F436E5F0066EC85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DDF5F101F436E5F0066EC85 /* LaunchScreen.storyboard in Resources */,
+				4DDF5F0D1F436E5F0066EC85 /* Assets.xcassets in Resources */,
+				4DDF5F081F436E5F0066EC85 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DDF5F141F436E5F0066EC85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09A6B50BC33CB67392A7DDE0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RBCChallengeTests/Pods-RBCChallengeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1005C5385FDDD1CFA400C7F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RBCChallengeTests/Pods-RBCChallengeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		211182CB2AE429701F66773F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		240B88DF11AEF8AD6C6F9176 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		44300C9C6122F101943CF544 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RBCChallenge/Pods-RBCChallenge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55C4ECFF50B37596E9B2AB24 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RBCChallenge/Pods-RBCChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4DDF5EFB1F436E5F0066EC85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DDF5F481F4371A20066EC85 /* YelpClient.swift in Sources */,
+				4DDF5F051F436E5F0066EC85 /* ViewController.swift in Sources */,
+				4D8146041F44CA5100696404 /* Review.swift in Sources */,
+				4DDF5F0B1F436E5F0066EC85 /* RBCChallenge.xcdatamodeld in Sources */,
+				4DDF5F501F44A0E90066EC85 /* LocationClient.swift in Sources */,
+				4DDF5F031F436E5F0066EC85 /* AppDelegate.swift in Sources */,
+				4D8146021F44A2C100696404 /* Business.swift in Sources */,
+				4DDF5F4C1F449A200066EC85 /* KeychainConfiguration.swift in Sources */,
+				4DDF5F4D1F449A200066EC85 /* KeychainPasswordItem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DDF5F121F436E5F0066EC85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DDF5F1B1F436E5F0066EC85 /* RBCChallengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4DDF5F181F436E5F0066EC85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4DDF5EFE1F436E5F0066EC85 /* RBCChallenge */;
+			targetProxy = 4DDF5F171F436E5F0066EC85 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4DDF5F061F436E5F0066EC85 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DDF5F071F436E5F0066EC85 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4DDF5F0E1F436E5F0066EC85 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DDF5F0F1F436E5F0066EC85 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4DDF5F1D1F436E5F0066EC85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4DDF5F1E1F436E5F0066EC85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4DDF5F201F436E5F0066EC85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F53F57DCEFAD74115B73AF69 /* Pods-RBCChallenge.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 57B8H4VJ56;
+				INFOPLIST_FILE = RBCChallenge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kemin.RBCChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4DDF5F211F436E5F0066EC85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8380EA2DEB9FDC462E1B8F52 /* Pods-RBCChallenge.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 57B8H4VJ56;
+				INFOPLIST_FILE = RBCChallenge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kemin.RBCChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		4DDF5F231F436E5F0066EC85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E783689524B1C5D123560E81 /* Pods-RBCChallengeTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 57B8H4VJ56;
+				INFOPLIST_FILE = RBCChallengeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kemin.RBCChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RBCChallenge.app/RBCChallenge";
+			};
+			name = Debug;
+		};
+		4DDF5F241F436E5F0066EC85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01ECB1FEC42D553A4D6905B0 /* Pods-RBCChallengeTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 57B8H4VJ56;
+				INFOPLIST_FILE = RBCChallengeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kemin.RBCChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RBCChallenge.app/RBCChallenge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4DDF5EFA1F436E5F0066EC85 /* Build configuration list for PBXProject "RBCChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DDF5F1D1F436E5F0066EC85 /* Debug */,
+				4DDF5F1E1F436E5F0066EC85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DDF5F1F1F436E5F0066EC85 /* Build configuration list for PBXNativeTarget "RBCChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DDF5F201F436E5F0066EC85 /* Debug */,
+				4DDF5F211F436E5F0066EC85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DDF5F221F436E5F0066EC85 /* Build configuration list for PBXNativeTarget "RBCChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DDF5F231F436E5F0066EC85 /* Debug */,
+				4DDF5F241F436E5F0066EC85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4DDF5F091F436E5F0066EC85 /* RBCChallenge.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4DDF5F0A1F436E5F0066EC85 /* RBCChallenge.xcdatamodel */,
+			);
+			currentVersion = 4DDF5F0A1F436E5F0066EC85 /* RBCChallenge.xcdatamodel */;
+			path = RBCChallenge.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4DDF5EF71F436E5F0066EC85 /* Project object */;
+}
