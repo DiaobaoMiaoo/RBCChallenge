@@ -10,26 +10,51 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var detailTableView: UITableView!
+    @IBOutlet weak var businessNameLabel: UILabel!
+    @IBOutlet weak var businessImageView: UIImageView!
+    @IBOutlet weak var streetLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    
+    var business: Business?
+    var reviews = [Review]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let business = business {
+            
+            // Set up the detail view for business
+            businessNameLabel.text = business.name ?? ""
+            businessImageView.sd_setImage(with: URL(string: business.imageUrl ?? ""), placeholderImage: UIImage(named: ""))
+            streetLabel.text = business.address.streetName ?? ""
+            cityLabel.text = business.address.cityName ?? ""
+            
+            // Fetch the most recent reviews and load them
+            YelpClient.sharedInstance.getReviewsFor(business: business) { message, reviews in
+                self.reviews = reviews ?? []
+                self.detailTableView.reloadData()
+            }
+        } else {
+        
+        }
     }
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return reviews.count
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCell", for: indexPath) as! ReviewTableViewCell
+        cell.setUpWith(review: reviews[indexPath.row])
+        return cell
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Reviews"
+    }
 }

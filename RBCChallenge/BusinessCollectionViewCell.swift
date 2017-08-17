@@ -17,9 +17,9 @@ class BusinessCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        layer.borderWidth = 2
-        layer.borderColor = UIColor.black.cgColor
-        layer.cornerRadius = 5
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.themeColor.cgColor
+        layer.cornerRadius = 3
     }
     
     func setUpWith(business: Business) {

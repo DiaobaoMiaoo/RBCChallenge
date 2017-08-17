@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23AF4C53A0CA08951F818A5F /* Pods_RBCChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72EAEDA4D51A3690D2638257 /* Pods_RBCChallenge.framework */; };
+		4D0C94371F463B4A00ED0105 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C94361F463B4A00ED0105 /* UIColor+Extension.swift */; };
 		4D8146021F44A2C100696404 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146011F44A2C100696404 /* Business.swift */; };
 		4D8146041F44CA5100696404 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146031F44CA5100696404 /* Review.swift */; };
 		4D81460A1F45360F00696404 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146091F45360F00696404 /* SearchViewController.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		01ECB1FEC42D553A4D6905B0 /* Pods-RBCChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RBCChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RBCChallengeTests/Pods-RBCChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		4D0C94361F463B4A00ED0105 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		4D8146011F44A2C100696404 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		4D8146031F44CA5100696404 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		4D8146091F45360F00696404 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4D0C94351F463B2900ED0105 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4D0C94361F463B4A00ED0105 /* UIColor+Extension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
 		4D8146001F44A2A800696404 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,8 +121,8 @@
 		4D8146051F45320700696404 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4D81460F1F45366200696404 /* CollectionViewCell */,
-				4D81460D1F45364F00696404 /* TableViewCell */,
+				4D81460F1F45366200696404 /* CollectionView */,
+				4D81460D1F45364F00696404 /* TableView */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -127,21 +137,21 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		4D81460D1F45364F00696404 /* TableViewCell */ = {
+		4D81460D1F45364F00696404 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
 				4D81460B1F45364600696404 /* SuggestionTableViewCell.swift */,
 				4D8146191F46170300696404 /* ReviewTableViewCell.swift */,
 			);
-			name = TableViewCell;
+			name = TableView;
 			sourceTree = "<group>";
 		};
-		4D81460F1F45366200696404 /* CollectionViewCell */ = {
+		4D81460F1F45366200696404 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
 				4D8146171F45377E00696404 /* BusinessCollectionViewCell.swift */,
 			);
-			name = CollectionViewCell;
+			name = CollectionView;
 			sourceTree = "<group>";
 		};
 		4D8146111F45368200696404 /* Storyboards */ = {
@@ -209,6 +219,7 @@
 		4DDF5F451F43718D0066EC85 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4D0C94351F463B2900ED0105 /* Extension */,
 				4D8146001F44A2A800696404 /* Modal */,
 				4DDF5F461F4371920066EC85 /* Networking */,
 			);
@@ -465,6 +476,7 @@
 				4DDF5F501F44A0E90066EC85 /* LocationClient.swift in Sources */,
 				4DDF5F031F436E5F0066EC85 /* AppDelegate.swift in Sources */,
 				4D81460C1F45364600696404 /* SuggestionTableViewCell.swift in Sources */,
+				4D0C94371F463B4A00ED0105 /* UIColor+Extension.swift in Sources */,
 				4D8146181F45377E00696404 /* BusinessCollectionViewCell.swift in Sources */,
 				4D8146021F44A2C100696404 /* Business.swift in Sources */,
 				4D8146141F45374D00696404 /* SearchResultViewController.swift in Sources */,

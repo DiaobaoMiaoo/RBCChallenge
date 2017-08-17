@@ -12,9 +12,18 @@ class SearchResultViewController: UIViewController {
 
     @IBOutlet weak var resultsCollectionView: UICollectionView!
     
-    fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
-    fileprivate var businesses = [Business]()
+    fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
     var keyword: String?
+    // Array that contains the sorted elements
+    var businesses = [Business]()
+    // Array that contains the elements with their original order. This array shall not be changed once get the value from YelpClient
+    var notSortedBusinesses = [Business]()
+    
+    enum SortCriteria {
+        case ascending
+        case descending
+        case relevance
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +31,7 @@ class SearchResultViewController: UIViewController {
         // Do any additional setup after loading the view.
         YelpClient.sharedInstance.getBusinessesWith(keyword: keyword ?? "") { message, businesses in
             self.businesses = businesses ?? []
+            self.notSortedBusinesses = businesses ?? []
             self.resultsCollectionView.reloadData()
         }
     }
@@ -61,5 +71,33 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
+    }
+}
+
+// MARK: -- Segues
+extension SearchResultViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail", let indexPath = resultsCollectionView.indexPathsForSelectedItems?.first {
+            let controller = segue.destination as! DetailViewController
+            controller.business = businesses[indexPath.row]
+        }
+    }
+}
+
+// MARK: -- Sort
+extension SearchResultViewController {
+
+    fileprivate func sortBusinessBy(_ criteria: SortCriteria) {
+        
+        switch criteria {
+        case .ascending:
+            businesses.sort { $0.name ?? "" < $1.name ?? "" }
+        case .descending:
+            businesses.sort { $0.name ?? "" > $1.name ?? "" }
+        case .relevance:
+            businesses = notSortedBusinesses
+        }
+        resultsCollectionView.reloadData()
     }
 }

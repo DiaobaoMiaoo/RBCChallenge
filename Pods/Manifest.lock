@@ -1,6 +1,5 @@
 PODS:
   - Alamofire (4.5.0)
-  - FloatRatingView (2.0)
   - NVActivityIndicatorView (3.7.0):
     - NVActivityIndicatorView/Presenter (= 3.7.0)
   - NVActivityIndicatorView/Presenter (3.7.0)
@@ -12,7 +11,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
-  - FloatRatingView (~> 2.0.0)
   - NVActivityIndicatorView
   - PopupDialog (~> 0.5)
   - SDWebImage (~> 4.0)
@@ -20,12 +18,11 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  FloatRatingView: 857ab8f10040d06a42fc979f486c8f9fecd2f2e5
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 6c358095b396dc83c3b5bd679b0d4ed4007b7063
+PODFILE CHECKSUM: 4516931fb2fb3907a0b21bbd113a33e7ea5bb77e
 
 COCOAPODS: 1.1.1

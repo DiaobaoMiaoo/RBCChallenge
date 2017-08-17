@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>FloatRatingView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>NVActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,7 +42,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>129E3088CA9764FA95F3CDFBAD1D5292</key>
+		<key>1E7A92AF56FE0821F9A80AE90216F882</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>34D4B58EC45D6878F7FBDBED7FF4C664</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,22 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A19E3F5C6DF43EFF0E454039553BAC67</key>
+		<key>BBE2A00153D8997B3AC1797B7B8185D7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B0F1EED56BF3D028F4CE8288BADFA4F9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CE48C13D4A887769311BD9DE9DF1C58B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E10250FECAFAA00B2CAAF40A7178BE26</key>
+		<key>C93A7FE499CFD49DA5DED81984E172EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
