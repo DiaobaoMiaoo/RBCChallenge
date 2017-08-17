@@ -8,7 +8,11 @@ target 'RBCChallenge' do
   # Pods for RBCChallenge
   pod 'Alamofire', '~> 4.4'
   pod 'SwiftyJSON'
-
+  pod 'SDWebImage', '~> 4.0'
+  pod 'PopupDialog', '~> 0.5'
+  pod 'NVActivityIndicatorView'
+  pod 'FloatRatingView', '~> 2.0.0'
+  
   target 'RBCChallengeTests' do
     inherit! :search_paths
     # Pods for testing

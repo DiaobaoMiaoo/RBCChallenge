@@ -19,21 +19,32 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Get the Yelp access token
+        YelpClient.sharedInstance.getAccessToken { message in
+            print(message)
+        }
         
-//        if YelpClient.sharedInstance.yelpAccessToken?.token == nil {
-//            YelpClient.sharedInstance.getAccessToken(completion: { message in
-//                YelpClient.sharedInstance.getAutoCompleteSuggestionsFor(keyword: "chinese", completion: { message, suggestions in
-//                    self.suggestions = suggestions!
-//                    self.suggestionTableView.reloadData()
-//                })
-//            })
-//        }
         // Setup the Search Controller
-        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        suggestionTableView.tableHeaderView = searchController.searchBar
     }
 }
 
-// MARK: -- SuggestionTableView Delegate and Datasource
+// MARK: -- Segues
+extension SearchViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showSearchResults", let indexPath = suggestionTableView.indexPathForSelectedRow {
+            let keyword = suggestions[indexPath.row]
+            let controller = segue.destination as! SearchResultViewController
+            controller.keyword = keyword
+        }
+    }
+}
+
+// MARK: -- TableView Delegate and Datasource
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,6 +62,12 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 extension SearchViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-        // TODO
+        
+        let keyword = searchController.searchBar.text!
+        
+        YelpClient.sharedInstance.getAutoCompleteSuggestionsFor(keyword: keyword) { message, suggestions in
+            self.suggestions = suggestions ?? []
+            self.suggestionTableView.reloadData()
+        }
     }
 }
