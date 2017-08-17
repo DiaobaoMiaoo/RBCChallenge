@@ -10,8 +10,12 @@
 		23AF4C53A0CA08951F818A5F /* Pods_RBCChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72EAEDA4D51A3690D2638257 /* Pods_RBCChallenge.framework */; };
 		4D8146021F44A2C100696404 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146011F44A2C100696404 /* Business.swift */; };
 		4D8146041F44CA5100696404 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146031F44CA5100696404 /* Review.swift */; };
+		4D81460A1F45360F00696404 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146091F45360F00696404 /* SearchViewController.swift */; };
+		4D81460C1F45364600696404 /* SuggestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D81460B1F45364600696404 /* SuggestionTableViewCell.swift */; };
+		4D8146141F45374D00696404 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146131F45374D00696404 /* SearchResultViewController.swift */; };
+		4D8146161F45376000696404 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146151F45376000696404 /* DetailViewController.swift */; };
+		4D8146181F45377E00696404 /* BusinessCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146171F45377E00696404 /* BusinessCollectionViewCell.swift */; };
 		4DDF5F031F436E5F0066EC85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF5F021F436E5F0066EC85 /* AppDelegate.swift */; };
-		4DDF5F051F436E5F0066EC85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF5F041F436E5F0066EC85 /* ViewController.swift */; };
 		4DDF5F081F436E5F0066EC85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF5F061F436E5F0066EC85 /* Main.storyboard */; };
 		4DDF5F0B1F436E5F0066EC85 /* RBCChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF5F091F436E5F0066EC85 /* RBCChallenge.xcdatamodeld */; };
 		4DDF5F0D1F436E5F0066EC85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF5F0C1F436E5F0066EC85 /* Assets.xcassets */; };
@@ -38,9 +42,13 @@
 		01ECB1FEC42D553A4D6905B0 /* Pods-RBCChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RBCChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RBCChallengeTests/Pods-RBCChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		4D8146011F44A2C100696404 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		4D8146031F44CA5100696404 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		4D8146091F45360F00696404 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		4D81460B1F45364600696404 /* SuggestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionTableViewCell.swift; sourceTree = "<group>"; };
+		4D8146131F45374D00696404 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		4D8146151F45376000696404 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4D8146171F45377E00696404 /* BusinessCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessCollectionViewCell.swift; sourceTree = "<group>"; };
 		4DDF5EFF1F436E5F0066EC85 /* RBCChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RBCChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDF5F021F436E5F0066EC85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4DDF5F041F436E5F0066EC85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4DDF5F071F436E5F0066EC85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DDF5F0A1F436E5F0066EC85 /* RBCChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RBCChallenge.xcdatamodel; sourceTree = "<group>"; };
 		4DDF5F0C1F436E5F0066EC85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +106,58 @@
 			name = Modal;
 			sourceTree = "<group>";
 		};
+		4D8146051F45320700696404 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D81460F1F45366200696404 /* CollectionViewCell */,
+				4D81460D1F45364F00696404 /* TableViewCell */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4D8146061F45321C00696404 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4D8146091F45360F00696404 /* SearchViewController.swift */,
+				4D8146131F45374D00696404 /* SearchResultViewController.swift */,
+				4D8146151F45376000696404 /* DetailViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4D81460D1F45364F00696404 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4D81460B1F45364600696404 /* SuggestionTableViewCell.swift */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		4D81460F1F45366200696404 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4D8146171F45377E00696404 /* BusinessCollectionViewCell.swift */,
+			);
+			name = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		4D8146111F45368200696404 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4DDF5F061F436E5F0066EC85 /* Main.storyboard */,
+				4DDF5F0E1F436E5F0066EC85 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		4D8146121F45369B00696404 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4DDF5F0C1F436E5F0066EC85 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		4DDF5EF61F436E5F0066EC85 = {
 			isa = PBXGroup;
 			children = (
@@ -121,13 +181,13 @@
 		4DDF5F011F436E5F0066EC85 /* RBCChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				4D8146061F45321C00696404 /* Controller */,
+				4D8146051F45320700696404 /* View */,
+				4D8146111F45368200696404 /* Storyboards */,
 				4DDF5F451F43718D0066EC85 /* Common */,
+				4D8146121F45369B00696404 /* Resources */,
 				4DDF5F491F4498BE0066EC85 /* ThirdParty */,
 				4DDF5F021F436E5F0066EC85 /* AppDelegate.swift */,
-				4DDF5F041F436E5F0066EC85 /* ViewController.swift */,
-				4DDF5F061F436E5F0066EC85 /* Main.storyboard */,
-				4DDF5F0C1F436E5F0066EC85 /* Assets.xcassets */,
-				4DDF5F0E1F436E5F0066EC85 /* LaunchScreen.storyboard */,
 				4DDF5F111F436E5F0066EC85 /* Info.plist */,
 				4DDF5F091F436E5F0066EC85 /* RBCChallenge.xcdatamodeld */,
 			);
@@ -394,12 +454,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DDF5F481F4371A20066EC85 /* YelpClient.swift in Sources */,
-				4DDF5F051F436E5F0066EC85 /* ViewController.swift in Sources */,
 				4D8146041F44CA5100696404 /* Review.swift in Sources */,
 				4DDF5F0B1F436E5F0066EC85 /* RBCChallenge.xcdatamodeld in Sources */,
+				4D8146161F45376000696404 /* DetailViewController.swift in Sources */,
+				4D81460A1F45360F00696404 /* SearchViewController.swift in Sources */,
 				4DDF5F501F44A0E90066EC85 /* LocationClient.swift in Sources */,
 				4DDF5F031F436E5F0066EC85 /* AppDelegate.swift in Sources */,
+				4D81460C1F45364600696404 /* SuggestionTableViewCell.swift in Sources */,
+				4D8146181F45377E00696404 /* BusinessCollectionViewCell.swift in Sources */,
 				4D8146021F44A2C100696404 /* Business.swift in Sources */,
+				4D8146141F45374D00696404 /* SearchResultViewController.swift in Sources */,
 				4DDF5F4C1F449A200066EC85 /* KeychainConfiguration.swift in Sources */,
 				4DDF5F4D1F449A200066EC85 /* KeychainPasswordItem.swift in Sources */,
 			);
