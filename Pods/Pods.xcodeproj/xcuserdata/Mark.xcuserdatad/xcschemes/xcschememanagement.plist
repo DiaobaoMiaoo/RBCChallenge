@@ -9,12 +9,32 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FloatRatingView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>NVActivityIndicatorView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RBCChallenge.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-RBCChallengeTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PopupDialog.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,7 +47,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1BF3A881DF1BF370F5C062A939CC8C5E</key>
+		<key>129E3088CA9764FA95F3CDFBAD1D5292</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3EDFE4052B5DE7D509935AC0774CB135</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +62,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>68122CF39365E419B4BC65404F3C44C9</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<key>A19E3F5C6DF43EFF0E454039553BAC67</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B0F1EED56BF3D028F4CE8288BADFA4F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE48C13D4A887769311BD9DE9DF1C58B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E10250FECAFAA00B2CAAF40A7178BE26</key>
 		<dict>
 			<key>primary</key>
 			<true/>
