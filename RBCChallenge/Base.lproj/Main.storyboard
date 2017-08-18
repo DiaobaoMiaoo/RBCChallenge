@@ -32,7 +32,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lso-js-KAx" id="S22-zf-Ow8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -75,7 +75,7 @@
         <!--Search Result View Controller-->
         <scene sceneID="jK1-Pk-foN">
             <objects>
-                <viewController id="Hqy-cM-Sbm" customClass="SearchResultViewController" customModule="RBCChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchResultViewController" id="Hqy-cM-Sbm" customClass="SearchResultViewController" customModule="RBCChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OXE-VK-arU"/>
                         <viewControllerLayoutGuide type="bottom" id="JSe-lI-9bA"/>
@@ -89,13 +89,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="W4T-Rl-GGb">
                                     <size key="itemSize" width="134" height="142"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BusinessCollectionViewCell" id="KEa-J2-HNX" customClass="BusinessCollectionViewCell" customModule="RBCChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <rect key="frame" x="0.0" y="50" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -145,6 +145,30 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResultsCollectionViewHeader" id="oJq-br-AoJ" customClass="ResultsCollectionViewHeader" customModule="RBCChallenge" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FpG-kH-bNe">
+                                            <rect key="frame" x="10" y="10" width="150" height="30"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="eht-I0-6aB"/>
+                                                <constraint firstAttribute="height" constant="30" id="k8w-Jw-whQ"/>
+                                            </constraints>
+                                            <state key="normal" title="Sort By: Relevance">
+                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="FpG-kH-bNe" firstAttribute="leading" secondItem="oJq-br-AoJ" secondAttribute="leading" constant="10" id="mC2-TB-64e"/>
+                                        <constraint firstItem="FpG-kH-bNe" firstAttribute="centerY" secondItem="oJq-br-AoJ" secondAttribute="centerY" id="tg6-kj-bDT"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="sortButton" destination="FpG-kH-bNe" id="enp-Ny-BCV"/>
+                                    </connections>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="Hqy-cM-Sbm" id="dXD-OM-0Ia"/>
                                     <outlet property="delegate" destination="Hqy-cM-Sbm" id="3l8-gA-vE5"/>
@@ -242,7 +266,7 @@
                                         <rect key="frame" x="0.0" y="295" width="375" height="189"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f1A-ZK-esW" id="rqh-NJ-69O">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="189"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="188.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P50-h1-zKY" userLabel="UserProfileImage">

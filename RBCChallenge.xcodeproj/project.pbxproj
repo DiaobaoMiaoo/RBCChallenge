@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		23AF4C53A0CA08951F818A5F /* Pods_RBCChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72EAEDA4D51A3690D2638257 /* Pods_RBCChallenge.framework */; };
 		4D0C94371F463B4A00ED0105 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C94361F463B4A00ED0105 /* UIColor+Extension.swift */; };
+		4D0C943D1F46507F00ED0105 /* ResultsCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C943C1F46507F00ED0105 /* ResultsCollectionViewHeader.swift */; };
+		4D0C943F1F468AAA00ED0105 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D0C943E1F468AAA00ED0105 /* CoreLocation.framework */; };
 		4D8146021F44A2C100696404 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146011F44A2C100696404 /* Business.swift */; };
 		4D8146041F44CA5100696404 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146031F44CA5100696404 /* Review.swift */; };
 		4D81460A1F45360F00696404 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146091F45360F00696404 /* SearchViewController.swift */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		01ECB1FEC42D553A4D6905B0 /* Pods-RBCChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RBCChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RBCChallengeTests/Pods-RBCChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		4D0C94361F463B4A00ED0105 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		4D0C943C1F46507F00ED0105 /* ResultsCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCollectionViewHeader.swift; sourceTree = "<group>"; };
+		4D0C943E1F468AAA00ED0105 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4D8146011F44A2C100696404 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		4D8146031F44CA5100696404 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		4D8146091F45360F00696404 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D0C943F1F468AAA00ED0105 /* CoreLocation.framework in Frameworks */,
 				23AF4C53A0CA08951F818A5F /* Pods_RBCChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +100,7 @@
 		3D3C916B74319DD68BB5D181 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D0C943E1F468AAA00ED0105 /* CoreLocation.framework */,
 				72EAEDA4D51A3690D2638257 /* Pods_RBCChallenge.framework */,
 				F0A0085B57840269F024A316 /* Pods_RBCChallengeTests.framework */,
 			);
@@ -150,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				4D8146171F45377E00696404 /* BusinessCollectionViewCell.swift */,
+				4D0C943C1F46507F00ED0105 /* ResultsCollectionViewHeader.swift */,
 			);
 			name = CollectionView;
 			sourceTree = "<group>";
@@ -477,6 +484,7 @@
 				4DDF5F031F436E5F0066EC85 /* AppDelegate.swift in Sources */,
 				4D81460C1F45364600696404 /* SuggestionTableViewCell.swift in Sources */,
 				4D0C94371F463B4A00ED0105 /* UIColor+Extension.swift in Sources */,
+				4D0C943D1F46507F00ED0105 /* ResultsCollectionViewHeader.swift in Sources */,
 				4D8146181F45377E00696404 /* BusinessCollectionViewCell.swift in Sources */,
 				4D8146021F44A2C100696404 /* Business.swift in Sources */,
 				4D8146141F45374D00696404 /* SearchResultViewController.swift in Sources */,

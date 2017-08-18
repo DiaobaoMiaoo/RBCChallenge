@@ -24,9 +24,12 @@ class SearchViewController: UIViewController {
             print(message)
         }
         
+        let _ = LocationClient.sharedInstance
+        
         // Setup the Search Controller
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
         definesPresentationContext = true
         suggestionTableView.tableHeaderView = searchController.searchBar
     }
@@ -58,8 +61,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-// MARK: -- UISearchResultsUpdating Delegate
-extension SearchViewController: UISearchResultsUpdating {
+// MARK: -- SearchBar Delegate
+extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
         
@@ -69,5 +72,12 @@ extension SearchViewController: UISearchResultsUpdating {
             self.suggestions = suggestions ?? []
             self.suggestionTableView.reloadData()
         }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        let searchResultViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchResultViewController") as! SearchResultViewController
+        searchResultViewController.keyword = searchBar.text
+        self.navigationController?.pushViewController(searchResultViewController, animated: true)
     }
 }

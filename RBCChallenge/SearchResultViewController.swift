@@ -19,17 +19,20 @@ class SearchResultViewController: UIViewController {
     // Array that contains the elements with their original order. This array shall not be changed once get the value from YelpClient
     var notSortedBusinesses = [Business]()
     
-    enum SortCriteria {
-        case ascending
-        case descending
-        case relevance
+    enum SortCriteria: String {
+        case ascending = "Ascending"
+        case descending = "Descending"
+        case relevance = "Relevance"
     }
+    var currentSortCriteria: SortCriteria = .relevance
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-        YelpClient.sharedInstance.getBusinessesWith(keyword: keyword ?? "") { message, businesses in
+        YelpClient.sharedInstance.getBusinessesWith(keyword: keyword ?? "",
+                                                    latitude: LocationClient.sharedInstance.currentLocation?.latitude,
+                                                    longitude: LocationClient.sharedInstance.currentLocation?.longitude) { message, businesses in
             self.businesses = businesses ?? []
             self.notSortedBusinesses = businesses ?? []
             self.resultsCollectionView.reloadData()
@@ -72,6 +75,20 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ResultsCollectionViewHeader", for: indexPath) as! ResultsCollectionViewHeader
+            headerView.backgroundColor = UIColor.themeColor
+            headerView.sortButton.addTarget(self, action: #selector(sortButtonTapped(_:)), for: .touchUpInside)
+            headerView.sortButton.setTitle("Sort By: \(currentSortCriteria.rawValue)", for: .normal)
+            return headerView
+        default:
+            // This is not suppose to happen
+            return UICollectionReusableView()
+        }
+    }
 }
 
 // MARK: -- Segues
@@ -88,6 +105,22 @@ extension SearchResultViewController {
 // MARK: -- Sort
 extension SearchResultViewController {
 
+    @objc fileprivate func sortButtonTapped(_ sender: UIButton) {
+        currentSortCriteria = getNextSortCriteria()
+        self.sortBusinessBy(currentSortCriteria)
+    }
+    
+    fileprivate func getNextSortCriteria() -> SortCriteria {
+        switch currentSortCriteria {
+        case .relevance:
+            return .ascending
+        case .ascending:
+            return .descending
+        case .descending:
+            return .relevance
+        }
+    }
+    
     fileprivate func sortBusinessBy(_ criteria: SortCriteria) {
         
         switch criteria {

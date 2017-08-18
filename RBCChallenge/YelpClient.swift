@@ -77,7 +77,7 @@ extension YelpClient {
      Set "limit" to adjust the number of fetched business with a default of 10.
      */
     func getBusinessesWith(keyword: String, limit: Int = 10,
-                           latitude: String = "43.646046", longitude: String = "-79.385487",
+                           latitude: String?, longitude: String?,
                            completion: @escaping (String, [Business]?) -> ()) {
         
         guard let token = yelpAccessToken?.token, let type = yelpAccessToken?.type else {
@@ -87,7 +87,10 @@ extension YelpClient {
         
         let searchURL = URL(string: YelpURLs.search)!
         let headers = ["Authorization": type + " " + token]
-        let parameters: [String: Any] = ["term": keyword, "latitude": latitude, "longitude": longitude, "limit": limit]
+        let parameters: [String: Any] = ["term": keyword,
+                                         "latitude": latitude ?? "43.646046",
+                                         "longitude": longitude ?? "-79.385487",
+                                         "limit": limit]
         
         Alamofire.request(searchURL, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { response in
             
