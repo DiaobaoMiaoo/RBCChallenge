@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Strongbox.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,17 +47,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1E7A92AF56FE0821F9A80AE90216F882</key>
+		<key>0BF069031F22EFD0C0248D7458D1B629</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>34D4B58EC45D6878F7FBDBED7FF4C664</key>
+		<key>31785947A40474EF4104F960856B40EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>3EDFE4052B5DE7D509935AC0774CB135</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6032E6AE57F156D02A7F4470810BB510</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BBE2A00153D8997B3AC1797B7B8185D7</key>
+		<key>A8C628C5C5CAC61B48AFD50A20B611A2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C93A7FE499CFD49DA5DED81984E172EF</key>
+		<key>EB87763FAEC6E9B73C41479B834A942F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -29,8 +29,6 @@
 		4DDF5F101F436E5F0066EC85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF5F0E1F436E5F0066EC85 /* LaunchScreen.storyboard */; };
 		4DDF5F1B1F436E5F0066EC85 /* RBCChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF5F1A1F436E5F0066EC85 /* RBCChallengeTests.swift */; };
 		4DDF5F481F4371A20066EC85 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF5F471F4371A20066EC85 /* YelpClient.swift */; };
-		4DDF5F4C1F449A200066EC85 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF5F4A1F449A200066EC85 /* KeychainConfiguration.swift */; };
-		4DDF5F4D1F449A200066EC85 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF5F4B1F449A200066EC85 /* KeychainPasswordItem.swift */; };
 		4DDF5F501F44A0E90066EC85 /* LocationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF5F4F1F44A0E90066EC85 /* LocationClient.swift */; };
 		E5CDD956F46741FC33DCFF73 /* Pods_RBCChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A0085B57840269F024A316 /* Pods_RBCChallengeTests.framework */; };
 /* End PBXBuildFile section */
@@ -72,8 +70,6 @@
 		4DDF5F1A1F436E5F0066EC85 /* RBCChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBCChallengeTests.swift; sourceTree = "<group>"; };
 		4DDF5F1C1F436E5F0066EC85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DDF5F471F4371A20066EC85 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
-		4DDF5F4A1F449A200066EC85 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
-		4DDF5F4B1F449A200066EC85 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		4DDF5F4F1F44A0E90066EC85 /* LocationClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationClient.swift; sourceTree = "<group>"; };
 		72EAEDA4D51A3690D2638257 /* Pods_RBCChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RBCChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8380EA2DEB9FDC462E1B8F52 /* Pods-RBCChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RBCChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-RBCChallenge/Pods-RBCChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -270,18 +266,8 @@
 		4DDF5F491F4498BE0066EC85 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				4DDF5F4E1F449A240066EC85 /* KeyChain */,
 			);
 			name = ThirdParty;
-			sourceTree = "<group>";
-		};
-		4DDF5F4E1F449A240066EC85 /* KeyChain */ = {
-			isa = PBXGroup;
-			children = (
-				4DDF5F4A1F449A200066EC85 /* KeychainConfiguration.swift */,
-				4DDF5F4B1F449A200066EC85 /* KeychainPasswordItem.swift */,
-			);
-			name = KeyChain;
 			sourceTree = "<group>";
 		};
 		F943A4F7378FA7841872B942 /* Pods */ = {
@@ -516,8 +502,6 @@
 				4D8146181F45377E00696404 /* BusinessCollectionViewCell.swift in Sources */,
 				4D8146021F44A2C100696404 /* Business.swift in Sources */,
 				4D8146141F45374D00696404 /* SearchResultViewController.swift in Sources */,
-				4DDF5F4C1F449A200066EC85 /* KeychainConfiguration.swift in Sources */,
-				4DDF5F4D1F449A200066EC85 /* KeychainPasswordItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

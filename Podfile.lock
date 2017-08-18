@@ -7,6 +7,7 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - Strongbox (0.3.1)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - NVActivityIndicatorView
   - PopupDialog (~> 0.5)
   - SDWebImage (~> 4.0)
+  - Strongbox
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -21,8 +23,9 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  Strongbox: 5018f3291e1102b4c11fab25d9e8494712e3d102
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 4516931fb2fb3907a0b21bbd113a33e7ea5bb77e
+PODFILE CHECKSUM: 830e14d66147c68785a31ca169922f5aea0a92a3
 
 COCOAPODS: 1.1.1

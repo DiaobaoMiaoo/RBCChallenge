@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import Strongbox
 
 class YelpClient {
     
@@ -47,24 +48,30 @@ class YelpClient {
         let accessTokenURL = URL(string: YelpURLs.token)!
         let parameters = ["client_id": yelpClientID, "client_secret": yelpClientSecret]
         
-        Alamofire.request(accessTokenURL,
-                          method: .post,
-                          parameters: parameters,
-                          encoding: URLEncoding.default,
-                          headers: nil).responseJSON { response in
-                            
-                            switch response.result {
-                            case .success(let value):
-                                let json = JSON(value)
-                                self.yelpAccessToken = YelpAccessToken(token: json["access_token"].string,
-                                                                       type: json["token_type"].string,
-                                                                       expiry: json["expires_in"].double,
-                                                                       creationTime: NSDate().timeIntervalSince1970)
-                                completion("success")
-                            case .failure(let error):
-                                print(error.localizedDescription)
-                                completion("fail")
-                            }
+        if let accessToken = getValidTokenFromKeychain() {
+            yelpAccessToken = accessToken
+            completion("success")
+        } else {
+            Alamofire.request(accessTokenURL,
+                              method: .post,
+                              parameters: parameters,
+                              encoding: URLEncoding.default,
+                              headers: nil).responseJSON { response in
+                                
+                                switch response.result {
+                                case .success(let value):
+                                    let json = JSON(value)
+                                    self.yelpAccessToken = YelpAccessToken(token: json["access_token"].string,
+                                                                           type: json["token_type"].string,
+                                                                           expiry: json["expires_in"].double,
+                                                                           creationTime: NSDate().timeIntervalSince1970)
+                                    self.saveToKeychain(tokenStruct: self.yelpAccessToken!)
+                                    completion("success")
+                                case .failure(let error):
+                                    print(error.localizedDescription)
+                                    completion("fail")
+                                }
+            }
         }
     }
 }
@@ -169,6 +176,49 @@ extension YelpClient {
                 print(error.localizedDescription)
                 completion("fail", nil)
             }
+        }
+    }
+}
+
+// MARK: -- Keychain Management
+extension YelpClient {
+    
+    fileprivate func saveToKeychain(tokenStruct: YelpAccessToken) {
+        guard let token = tokenStruct.token,
+            let expiry = tokenStruct.expiry,
+            let type = tokenStruct.type  else {
+                return
+        }
+        let strongBox = Strongbox()
+        let _ = strongBox.archive(token, key: "token")
+        let _ = strongBox.archive(expiry, key: "expiry")
+        let _ = strongBox.archive(type, key: "type")
+        let _ = strongBox.archive(tokenStruct.creationTime, key: "creationTime")
+    }
+    
+    fileprivate func getValidTokenFromKeychain() -> YelpAccessToken? {
+        let strongBox = Strongbox()
+        
+        guard let token = strongBox.unarchive(objectForKey: "token") as? String,
+            let expiry = strongBox.unarchive(objectForKey: "expiry") as? Double,
+            let type = strongBox.unarchive(objectForKey: "type") as? String,
+            let creationTime = strongBox.unarchive(objectForKey: "creationTime") as? Double else {
+                return nil
+        }
+        
+        guard validateToken(creationTime: creationTime, expiry: expiry) else {
+            return nil
+        }
+        
+        return YelpAccessToken(token: token, type: type, expiry: expiry, creationTime: creationTime)
+    }
+    
+    fileprivate func validateToken(creationTime: Double, expiry: Double) -> Bool {
+        let currentTime = NSDate().timeIntervalSince1970
+        if creationTime + expiry > currentTime {
+            return true
+        } else {
+            return false
         }
     }
 }

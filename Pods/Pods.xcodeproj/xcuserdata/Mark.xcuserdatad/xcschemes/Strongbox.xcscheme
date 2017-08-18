@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'EB87763FAEC6E9B73C41479B834A942F'
-               BlueprintName = 'SDWebImage'
+               BlueprintIdentifier = 'A8C628C5C5CAC61B48AFD50A20B611A2'
+               BlueprintName = 'Strongbox'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SDWebImage.framework'>
+               BuildableName = 'Strongbox.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
