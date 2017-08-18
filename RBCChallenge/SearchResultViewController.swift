@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchResultViewController: UIViewController {
+class SearchResultViewController: BaseViewController {
 
     @IBOutlet weak var resultsCollectionView: UICollectionView!
     
@@ -95,9 +95,10 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
 extension SearchResultViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail", let indexPath = resultsCollectionView.indexPathsForSelectedItems?.first {
-            let controller = segue.destination as! DetailViewController
-            controller.business = businesses[indexPath.row]
+        if let indexPath = resultsCollectionView.indexPathsForSelectedItems?.first,
+           let destNav = segue.destination as? UINavigationController,
+           let detailController = destNav.topViewController as? DetailViewController {
+                detailController.business = businesses[indexPath.row]
         }
     }
 }

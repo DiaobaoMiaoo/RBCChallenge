@@ -8,15 +8,18 @@
 
 import UIKit
 import CoreData
+import PopupDialog
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setUpSplitViewController()
+        setUpAppearanceForPopupDialog()
         return true
     }
 
@@ -44,6 +47,60 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
 
+    // MARK: -- Split view
+    
+    func setUpSplitViewController() {
+        let splitViewController = window!.rootViewController as! UISplitViewController
+        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
+        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+        splitViewController.delegate = self
+        splitViewController.preferredPrimaryColumnWidthFraction = 0.5
+        splitViewController.maximumPrimaryColumnWidth = 512
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            splitViewController.preferredDisplayMode = .allVisible
+        }
+    }
+    
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
+        guard let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController else { return false }
+        if topAsDetailController.business == nil {
+            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+            return true
+        }
+        return false
+    }
+    
+    // MARK: -- Set Up Appearance for Popups
+    func setUpAppearanceForPopupDialog() {
+        
+        // Customize dialog appearance
+        let pv = PopupDialogDefaultView.appearance()
+        pv.titleFont    = UIFont(name: "Avenir-Light", size: 16)!
+        pv.titleColor   = UIColor.black
+        pv.messageFont  = UIFont(name: "Avenir", size: 14)!
+        pv.messageColor = UIColor.black
+        
+        // Customize the container view appearance
+        let pcv = PopupDialogContainerView.appearance()
+        pcv.backgroundColor = UIColor.themeColor
+        pcv.shadowEnabled   = true
+        
+        // Customize default button appearance
+        let db = DefaultButton.appearance()
+        db.titleFont      = UIFont(name: "Avenir-Medium", size: 16)!
+        db.titleColor     = UIColor.white
+        db.buttonColor    = UIColor(red:0, green:53/255, blue:86/255, alpha:1.00)
+        db.separatorColor = UIColor(red:0, green:53/255, blue:86/255, alpha:1.00)
+        
+        // Customize cancel button appearance
+        let cb = CancelButton.appearance()
+        cb.titleFont      = UIFont(name: "Avenir-Medium", size: 16)!
+        cb.titleColor     = UIColor.white
+        cb.buttonColor    = UIColor(red:0, green:53/255, blue:86/255, alpha:1.00)
+        cb.separatorColor = UIColor(white: 0.9, alpha: 1)
+    }
+    
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {

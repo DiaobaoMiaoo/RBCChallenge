@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cK4-BR-27Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DYE-Hs-JqH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -72,6 +71,19 @@
             </objects>
             <point key="canvasLocation" x="-128.80000000000001" y="-305.39730134932535"/>
         </scene>
+        <!--Split View Controller-->
+        <scene sceneID="u1z-Lz-zd4">
+            <objects>
+                <splitViewController id="DYE-Hs-JqH" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="cK4-BR-27Y" kind="relationship" relationship="masterViewController" id="HRX-eJ-36t"/>
+                        <segue destination="FXP-tz-PBb" kind="relationship" relationship="detailViewController" id="T03-6l-3RW"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Vd-tg-QSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2034" y="48"/>
+        </scene>
         <!--Search Result View Controller-->
         <scene sceneID="jK1-Pk-foN">
             <objects>
@@ -108,32 +120,35 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="373 Columbus Ave" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfV-jI-954">
-                                                    <rect key="frame" x="20" y="83" width="110" height="15"/>
+                                                    <rect key="frame" x="20" y="91" width="110" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toronto, ON, Canada" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aP-a3-G5a">
-                                                    <rect key="frame" x="28" y="103" width="94" height="29"/>
+                                                    <rect key="frame" x="20" y="111" width="110" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="si2-Sc-xfK">
+                                                    <rect key="frame" x="110" y="63" width="27" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="1aP-a3-G5a" firstAttribute="leading" secondItem="KEa-J2-HNX" secondAttribute="leadingMargin" constant="20" id="0nF-WC-gnf"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="1aP-a3-G5a" secondAttribute="trailing" constant="20" id="AA4-Af-YbF"/>
+                                            <constraint firstAttribute="trailing" secondItem="1aP-a3-G5a" secondAttribute="trailing" constant="20" id="9V7-TZ-F4t"/>
                                             <constraint firstAttribute="trailing" secondItem="jl1-8C-Zx6" secondAttribute="trailing" constant="10" id="ERO-bZ-041"/>
                                             <constraint firstItem="KfV-jI-954" firstAttribute="centerX" secondItem="KEa-J2-HNX" secondAttribute="centerX" id="HYc-wY-wnB"/>
                                             <constraint firstItem="jl1-8C-Zx6" firstAttribute="centerX" secondItem="KEa-J2-HNX" secondAttribute="centerX" id="Mgh-1o-4f0"/>
-                                            <constraint firstItem="1aP-a3-G5a" firstAttribute="centerX" secondItem="KEa-J2-HNX" secondAttribute="centerX" id="R3Z-kc-0Ku"/>
+                                            <constraint firstItem="1aP-a3-G5a" firstAttribute="leading" secondItem="KEa-J2-HNX" secondAttribute="leading" constant="20" id="R4N-gC-hXS"/>
                                             <constraint firstItem="jl1-8C-Zx6" firstAttribute="top" secondItem="KEa-J2-HNX" secondAttribute="top" constant="20" id="R75-4v-QBO"/>
+                                            <constraint firstItem="1aP-a3-G5a" firstAttribute="top" secondItem="KfV-jI-954" secondAttribute="bottom" constant="5" id="RX5-wX-Az9"/>
+                                            <constraint firstAttribute="bottom" secondItem="1aP-a3-G5a" secondAttribute="bottom" constant="10" id="UMR-5R-G6P"/>
                                             <constraint firstItem="jl1-8C-Zx6" firstAttribute="leading" secondItem="KEa-J2-HNX" secondAttribute="leading" constant="10" id="YEX-eY-2PG"/>
-                                            <constraint firstItem="1aP-a3-G5a" firstAttribute="top" secondItem="KfV-jI-954" secondAttribute="bottom" constant="5" id="gzL-Cd-zk7"/>
-                                            <constraint firstItem="KfV-jI-954" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jl1-8C-Zx6" secondAttribute="bottom" constant="10" id="ja5-KX-lOO"/>
                                             <constraint firstAttribute="trailing" secondItem="KfV-jI-954" secondAttribute="trailing" constant="20" id="s9r-aG-mMu"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="1aP-a3-G5a" secondAttribute="bottom" constant="10" id="uBu-uz-Egs"/>
                                             <constraint firstItem="KfV-jI-954" firstAttribute="leading" secondItem="KEa-J2-HNX" secondAttribute="leading" constant="20" id="vzd-QC-KEv"/>
                                         </constraints>
                                         <size key="customSize" width="150" height="150"/>
@@ -141,7 +156,7 @@
                                             <outlet property="addressLabelCity" destination="1aP-a3-G5a" id="S3j-cM-WJv"/>
                                             <outlet property="addressLabelStreet" destination="KfV-jI-954" id="Vgh-v2-lxy"/>
                                             <outlet property="nameLabel" destination="jl1-8C-Zx6" id="WFf-3r-ojK"/>
-                                            <segue destination="8zB-sv-vbC" kind="show" identifier="showDetail" id="BRZ-ch-IK1"/>
+                                            <segue destination="FXP-tz-PBb" kind="showDetail" id="C70-hZ-Vl7"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -343,6 +358,7 @@
                             <constraint firstItem="aDO-vq-Owh" firstAttribute="top" secondItem="qg5-L3-C5b" secondAttribute="top" id="v2H-5O-EAm"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nRI-Ny-x2a"/>
                     <connections>
                         <outlet property="businessImageView" destination="a4H-CH-4vJ" id="ekj-2W-UST"/>
                         <outlet property="businessNameLabel" destination="NFs-g7-sKY" id="f5E-b4-YcV"/>
@@ -353,7 +369,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="96d-RT-vZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1605.5999999999999" y="-305.39730134932535"/>
+            <point key="canvasLocation" x="-129" y="464"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MEj-QF-VaE">
@@ -373,5 +389,26 @@
             </objects>
             <point key="canvasLocation" x="-1001" y="-305"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Llc-cr-aUB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FXP-tz-PBb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kde-dg-F3g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8zB-sv-vbC" kind="relationship" relationship="rootViewController" id="2Yl-u7-r1J"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CBk-Gj-S6Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1002" y="464"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="C70-hZ-Vl7"/>
+    </inferredMetricsTieBreakers>
 </document>

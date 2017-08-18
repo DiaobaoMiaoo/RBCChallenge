@@ -11,6 +11,7 @@ target 'RBCChallenge' do
   pod 'SDWebImage', '~> 4.0'
   pod 'PopupDialog', '~> 0.5'
   pod 'NVActivityIndicatorView'
+  pod 'DOFavoriteButton'
   
   target 'RBCChallengeTests' do
     inherit! :search_paths

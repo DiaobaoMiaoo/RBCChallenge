@@ -11,6 +11,7 @@
 		4D0C94371F463B4A00ED0105 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C94361F463B4A00ED0105 /* UIColor+Extension.swift */; };
 		4D0C943D1F46507F00ED0105 /* ResultsCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C943C1F46507F00ED0105 /* ResultsCollectionViewHeader.swift */; };
 		4D0C943F1F468AAA00ED0105 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D0C943E1F468AAA00ED0105 /* CoreLocation.framework */; };
+		4D0C94411F4695A800ED0105 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C94401F4695A800ED0105 /* BaseViewController.swift */; };
 		4D8146021F44A2C100696404 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146011F44A2C100696404 /* Business.swift */; };
 		4D8146041F44CA5100696404 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146031F44CA5100696404 /* Review.swift */; };
 		4D81460A1F45360F00696404 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146091F45360F00696404 /* SearchViewController.swift */; };
@@ -47,6 +48,7 @@
 		4D0C94361F463B4A00ED0105 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		4D0C943C1F46507F00ED0105 /* ResultsCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCollectionViewHeader.swift; sourceTree = "<group>"; };
 		4D0C943E1F468AAA00ED0105 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4D0C94401F4695A800ED0105 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4D8146011F44A2C100696404 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		4D8146031F44CA5100696404 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		4D8146091F45360F00696404 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		4D8146061F45321C00696404 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4D0C94401F4695A800ED0105 /* BaseViewController.swift */,
 				4D8146091F45360F00696404 /* SearchViewController.swift */,
 				4D8146131F45374D00696404 /* SearchResultViewController.swift */,
 				4D8146151F45376000696404 /* DetailViewController.swift */,
@@ -481,6 +484,7 @@
 				4D81460A1F45360F00696404 /* SearchViewController.swift in Sources */,
 				4D81461A1F46170300696404 /* ReviewTableViewCell.swift in Sources */,
 				4DDF5F501F44A0E90066EC85 /* LocationClient.swift in Sources */,
+				4D0C94411F4695A800ED0105 /* BaseViewController.swift in Sources */,
 				4DDF5F031F436E5F0066EC85 /* AppDelegate.swift in Sources */,
 				4D81460C1F45364600696404 /* SuggestionTableViewCell.swift in Sources */,
 				4D0C94371F463B4A00ED0105 /* UIColor+Extension.swift in Sources */,

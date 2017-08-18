@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: BaseViewController {
 
     @IBOutlet weak var detailTableView: UITableView!
     @IBOutlet weak var businessNameLabel: UILabel!
