@@ -53,7 +53,13 @@
                             <constraint firstItem="AbU-Sy-nyk" firstAttribute="top" secondItem="uYc-kR-UUz" secondAttribute="bottom" constant="-64" id="yA4-5d-ahT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="tn7-m4-TYh"/>
+                    <navigationItem key="navigationItem" title="Search" id="tn7-m4-TYh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="OBH-Lf-lhy" userLabel="FavButton">
+                            <connections>
+                                <segue destination="Hqy-cM-Sbm" kind="show" identifier="showFavorites" id="lsv-iA-RJL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="b8j-Wm-Hh5" id="gir-PV-K5j"/>
                         <outlet property="suggestionTableView" destination="AbU-Sy-nyk" id="DYh-NI-v34"/>
@@ -131,14 +137,21 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="si2-Sc-xfK">
-                                                    <rect key="frame" x="110" y="63" width="27" height="27"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wV-mF-7qa" customClass="FavButton" customModule="RBCChallenge" customModuleProvider="target">
+                                                    <rect key="frame" x="110" y="66" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="2wV-mF-7qa" secondAttribute="height" multiplier="1:1" id="Cpt-1g-CyU"/>
+                                                        <constraint firstAttribute="height" constant="30" id="INn-A2-v95"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="notFavImage"/>
+                                                    <connections>
+                                                        <action selector="favButtonTapped:" destination="KEa-J2-HNX" eventType="touchUpInside" id="vvj-BR-ff0"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="2wV-mF-7qa" secondAttribute="trailing" constant="10" id="7zz-8Z-Uye"/>
                                             <constraint firstAttribute="trailing" secondItem="1aP-a3-G5a" secondAttribute="trailing" constant="20" id="9V7-TZ-F4t"/>
                                             <constraint firstAttribute="trailing" secondItem="jl1-8C-Zx6" secondAttribute="trailing" constant="10" id="ERO-bZ-041"/>
                                             <constraint firstItem="KfV-jI-954" firstAttribute="centerX" secondItem="KEa-J2-HNX" secondAttribute="centerX" id="HYc-wY-wnB"/>
@@ -150,11 +163,13 @@
                                             <constraint firstItem="jl1-8C-Zx6" firstAttribute="leading" secondItem="KEa-J2-HNX" secondAttribute="leading" constant="10" id="YEX-eY-2PG"/>
                                             <constraint firstAttribute="trailing" secondItem="KfV-jI-954" secondAttribute="trailing" constant="20" id="s9r-aG-mMu"/>
                                             <constraint firstItem="KfV-jI-954" firstAttribute="leading" secondItem="KEa-J2-HNX" secondAttribute="leading" constant="20" id="vzd-QC-KEv"/>
+                                            <constraint firstItem="2wV-mF-7qa" firstAttribute="top" secondItem="jl1-8C-Zx6" secondAttribute="bottom" constant="5" id="wz8-1m-Lgm"/>
                                         </constraints>
                                         <size key="customSize" width="150" height="150"/>
                                         <connections>
                                             <outlet property="addressLabelCity" destination="1aP-a3-G5a" id="S3j-cM-WJv"/>
                                             <outlet property="addressLabelStreet" destination="KfV-jI-954" id="Vgh-v2-lxy"/>
+                                            <outlet property="favButton" destination="2wV-mF-7qa" id="94L-Zd-AJt"/>
                                             <outlet property="nameLabel" destination="jl1-8C-Zx6" id="WFf-3r-ojK"/>
                                             <segue destination="FXP-tz-PBb" kind="showDetail" id="C70-hZ-Vl7"/>
                                         </connections>
@@ -258,11 +273,20 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzf-1w-L71" userLabel="FavButton" customClass="FavButton" customModule="RBCChallenge" customModuleProvider="target">
+                                            <rect key="frame" x="325" y="60" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="yzf-1w-L71" secondAttribute="height" multiplier="1:1" id="ZaP-S8-gBb"/>
+                                                <constraint firstAttribute="height" constant="30" id="i8D-iX-y99"/>
+                                            </constraints>
+                                            <state key="normal" title="Button" image="notFavImage"/>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="NFs-g7-sKY" secondAttribute="trailing" constant="20" id="8Ww-Us-xvw"/>
                                         <constraint firstAttribute="trailing" secondItem="U3D-x4-jd6" secondAttribute="trailing" constant="20" id="9h5-MH-v78"/>
+                                        <constraint firstItem="yzf-1w-L71" firstAttribute="top" secondItem="NFs-g7-sKY" secondAttribute="bottom" constant="15" id="B0F-4d-5ki"/>
                                         <constraint firstAttribute="trailing" secondItem="e1j-RP-2mz" secondAttribute="trailing" constant="20" id="Fas-1y-Ico"/>
                                         <constraint firstItem="a4H-CH-4vJ" firstAttribute="centerX" secondItem="xfP-KQ-iVl" secondAttribute="centerX" id="Om3-ko-Sll"/>
                                         <constraint firstItem="NFs-g7-sKY" firstAttribute="centerX" secondItem="xfP-KQ-iVl" secondAttribute="centerX" id="QJE-IL-WOP"/>
@@ -271,6 +295,7 @@
                                         <constraint firstItem="U3D-x4-jd6" firstAttribute="leading" secondItem="xfP-KQ-iVl" secondAttribute="leading" constant="20" id="b4x-c7-Muy"/>
                                         <constraint firstItem="NFs-g7-sKY" firstAttribute="top" secondItem="xfP-KQ-iVl" secondAttribute="top" constant="20" id="bLk-Z5-Rfa"/>
                                         <constraint firstAttribute="bottom" secondItem="e1j-RP-2mz" secondAttribute="bottom" constant="10" id="cXj-yA-Lvm"/>
+                                        <constraint firstAttribute="trailing" secondItem="yzf-1w-L71" secondAttribute="trailing" constant="20" id="hLY-g9-hxT"/>
                                         <constraint firstItem="a4H-CH-4vJ" firstAttribute="top" secondItem="NFs-g7-sKY" secondAttribute="bottom" constant="15" id="iPF-v6-xvv"/>
                                         <constraint firstItem="NFs-g7-sKY" firstAttribute="leading" secondItem="xfP-KQ-iVl" secondAttribute="leading" constant="20" id="kXD-jq-aYY"/>
                                         <constraint firstItem="U3D-x4-jd6" firstAttribute="top" secondItem="a4H-CH-4vJ" secondAttribute="bottom" constant="15" id="xBg-jo-EYY"/>
@@ -364,6 +389,7 @@
                         <outlet property="businessNameLabel" destination="NFs-g7-sKY" id="f5E-b4-YcV"/>
                         <outlet property="cityLabel" destination="e1j-RP-2mz" id="LND-p9-2Aa"/>
                         <outlet property="detailTableView" destination="aDO-vq-Owh" id="v7u-To-fdx"/>
+                        <outlet property="favButton" destination="yzf-1w-L71" id="rVR-O9-MqW"/>
                         <outlet property="streetLabel" destination="U3D-x4-jd6" id="zZX-vl-KVL"/>
                     </connections>
                 </viewController>
@@ -408,7 +434,11 @@
             <point key="canvasLocation" x="-1002" y="464"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="notFavImage" width="980" height="866"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="C70-hZ-Vl7"/>
+        <segue reference="lsv-iA-RJL"/>
     </inferredMetricsTieBreakers>
 </document>

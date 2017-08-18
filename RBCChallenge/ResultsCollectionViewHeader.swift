@@ -11,7 +11,6 @@ import UIKit
 class ResultsCollectionViewHeader: UICollectionReusableView {
     
     @IBOutlet weak var sortButton: UIButton!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         sortButton.layer.cornerRadius = 2

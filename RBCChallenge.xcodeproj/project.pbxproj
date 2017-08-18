@@ -12,6 +12,8 @@
 		4D0C943D1F46507F00ED0105 /* ResultsCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C943C1F46507F00ED0105 /* ResultsCollectionViewHeader.swift */; };
 		4D0C943F1F468AAA00ED0105 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D0C943E1F468AAA00ED0105 /* CoreLocation.framework */; };
 		4D0C94411F4695A800ED0105 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C94401F4695A800ED0105 /* BaseViewController.swift */; };
+		4D0C94471F4740D300ED0105 /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C94461F4740D300ED0105 /* FavoriteManager.swift */; };
+		4D0C944B1F474D1F00ED0105 /* FavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C944A1F474D1F00ED0105 /* FavButton.swift */; };
 		4D8146021F44A2C100696404 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146011F44A2C100696404 /* Business.swift */; };
 		4D8146041F44CA5100696404 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146031F44CA5100696404 /* Review.swift */; };
 		4D81460A1F45360F00696404 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146091F45360F00696404 /* SearchViewController.swift */; };
@@ -49,6 +51,8 @@
 		4D0C943C1F46507F00ED0105 /* ResultsCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCollectionViewHeader.swift; sourceTree = "<group>"; };
 		4D0C943E1F468AAA00ED0105 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4D0C94401F4695A800ED0105 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4D0C94461F4740D300ED0105 /* FavoriteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteManager.swift; sourceTree = "<group>"; };
+		4D0C944A1F474D1F00ED0105 /* FavButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavButton.swift; sourceTree = "<group>"; };
 		4D8146011F44A2C100696404 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		4D8146031F44CA5100696404 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		4D8146091F45360F00696404 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +121,22 @@
 			name = Extension;
 			sourceTree = "<group>";
 		};
+		4D0C94431F473EE700ED0105 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				4D0C94461F4740D300ED0105 /* FavoriteManager.swift */,
+			);
+			name = Storage;
+			sourceTree = "<group>";
+		};
+		4D0C94491F474D0600ED0105 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				4D0C944A1F474D1F00ED0105 /* FavButton.swift */,
+			);
+			name = Widget;
+			sourceTree = "<group>";
+		};
 		4D8146001F44A2A800696404 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +149,7 @@
 		4D8146051F45320700696404 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4D0C94491F474D0600ED0105 /* Widget */,
 				4D81460F1F45366200696404 /* CollectionView */,
 				4D81460D1F45364F00696404 /* TableView */,
 			);
@@ -229,6 +250,7 @@
 		4DDF5F451F43718D0066EC85 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4D0C94431F473EE700ED0105 /* Storage */,
 				4D0C94351F463B2900ED0105 /* Extension */,
 				4D8146001F44A2A800696404 /* Modal */,
 				4DDF5F461F4371920066EC85 /* Networking */,
@@ -480,12 +502,14 @@
 				4DDF5F481F4371A20066EC85 /* YelpClient.swift in Sources */,
 				4D8146041F44CA5100696404 /* Review.swift in Sources */,
 				4DDF5F0B1F436E5F0066EC85 /* RBCChallenge.xcdatamodeld in Sources */,
+				4D0C94471F4740D300ED0105 /* FavoriteManager.swift in Sources */,
 				4D8146161F45376000696404 /* DetailViewController.swift in Sources */,
 				4D81460A1F45360F00696404 /* SearchViewController.swift in Sources */,
 				4D81461A1F46170300696404 /* ReviewTableViewCell.swift in Sources */,
 				4DDF5F501F44A0E90066EC85 /* LocationClient.swift in Sources */,
 				4D0C94411F4695A800ED0105 /* BaseViewController.swift in Sources */,
 				4DDF5F031F436E5F0066EC85 /* AppDelegate.swift in Sources */,
+				4D0C944B1F474D1F00ED0105 /* FavButton.swift in Sources */,
 				4D81460C1F45364600696404 /* SuggestionTableViewCell.swift in Sources */,
 				4D0C94371F463B4A00ED0105 /* UIColor+Extension.swift in Sources */,
 				4D0C943D1F46507F00ED0105 /* ResultsCollectionViewHeader.swift in Sources */,

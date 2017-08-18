@@ -15,6 +15,7 @@ class DetailViewController: BaseViewController {
     @IBOutlet weak var businessImageView: UIImageView!
     @IBOutlet weak var streetLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var favButton: FavButton!
     
     var business: Business?
     var reviews = [Review]()
@@ -30,7 +31,8 @@ class DetailViewController: BaseViewController {
             businessImageView.sd_setImage(with: URL(string: business.imageUrl ?? ""), placeholderImage: UIImage(named: ""))
             streetLabel.text = business.address.streetName ?? ""
             cityLabel.text = business.address.cityName ?? ""
-            
+            favButton.favorited = FavoriteManager.sharedInstance.alreadyInFavoriteFor(business: business)
+            favButton.addTarget(self, action: #selector(favButtonTapped(_:)), for: .touchUpInside)
             // Fetch the most recent reviews and load them
             YelpClient.sharedInstance.getReviewsFor(business: business) { message, reviews in
                 self.reviews = reviews ?? []
@@ -38,6 +40,18 @@ class DetailViewController: BaseViewController {
             }
         } else {
         
+        }
+    }
+    
+    func favButtonTapped(_ sender: FavButton) {
+        guard let business = business else {
+            return
+        }
+        sender.favorited = !sender.favorited
+        if favButton.favorited {
+            FavoriteManager.sharedInstance.save(business: business)
+        } else {
+            FavoriteManager.sharedInstance.remove(business: business)
         }
     }
 }

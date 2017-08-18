@@ -32,4 +32,13 @@ extension Business {
                                                    cityName: json["location"]["display_address"][1].string)
         return self
     }
+    
+    func getObjectFrom(entity: BusinessEntity) -> Business {
+        id = entity.id
+        name = entity.name
+        imageUrl = entity.imageURL
+        address = DisplayAddress(streetName: entity.street,
+                                 cityName: entity.city)
+        return self
+    }
 }

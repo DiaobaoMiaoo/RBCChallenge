@@ -43,6 +43,8 @@ extension SearchViewController {
             let keyword = suggestions[indexPath.row]
             let controller = segue.destination as! SearchResultViewController
             controller.keyword = keyword
+        } else {
+            
         }
     }
 }
