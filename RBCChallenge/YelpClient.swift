@@ -11,6 +11,11 @@ import Alamofire
 import SwiftyJSON
 import Strongbox
 
+struct RequestStatus {
+    static let success = "success"
+    static let fail = "fail"
+}
+
 class YelpClient {
     
     fileprivate let yelpClientID     = "3q3vvC5XwA9GW_FWyb_o_Q"
@@ -50,7 +55,7 @@ class YelpClient {
         
         if let accessToken = getValidTokenFromKeychain() {
             yelpAccessToken = accessToken
-            completion("success")
+            completion(RequestStatus.success)
         } else {
             Alamofire.request(accessTokenURL,
                               method: .post,
@@ -66,10 +71,9 @@ class YelpClient {
                                                                            expiry: json["expires_in"].double,
                                                                            creationTime: NSDate().timeIntervalSince1970)
                                     self.saveToKeychain(tokenStruct: self.yelpAccessToken!)
-                                    completion("success")
+                                    completion(RequestStatus.success)
                                 case .failure(let error):
-                                    print(error.localizedDescription)
-                                    completion("fail")
+                                    completion(error.localizedDescription)
                                 }
             }
         }
@@ -109,10 +113,9 @@ extension YelpClient {
                     let business = Business().getObjectFrom(json: businessJson)
                     businessArray.append(business)
                 }
-                completion("success", businessArray)
+                completion(RequestStatus.success, businessArray)
             case .failure(let error):
-                print(error.localizedDescription)
-                completion("fail", nil)
+                completion(error.localizedDescription, nil)
             }
         }
     }
@@ -145,10 +148,10 @@ extension YelpClient {
                     let review = Review().getObjectFrom(json: reviewJson)
                     reviewArray.append(review)
                 }
-                completion("success", reviewArray)
+                completion(RequestStatus.success, reviewArray)
             case .failure(let error):
                 print(error.localizedDescription)
-                completion("fail", nil)
+                completion(error.localizedDescription, nil)
             }
         }
     }
@@ -171,10 +174,9 @@ extension YelpClient {
             switch response.result {
             case .success(let value):
                 let suggestionArray = self.getAutoCompletionSuggestions(json: JSON(value))
-                completion("success", suggestionArray)
+                completion(RequestStatus.success, suggestionArray)
             case .failure(let error):
-                print(error.localizedDescription)
-                completion("fail", nil)
+                completion(error.localizedDescription, nil)
             }
         }
     }
@@ -183,6 +185,9 @@ extension YelpClient {
 // MARK: -- Keychain Management
 extension YelpClient {
     
+    /*
+     Save the YelpAccessToken to keychain
+     */
     fileprivate func saveToKeychain(tokenStruct: YelpAccessToken) {
         guard let token = tokenStruct.token,
             let expiry = tokenStruct.expiry,
@@ -196,6 +201,10 @@ extension YelpClient {
         let _ = strongBox.archive(tokenStruct.creationTime, key: "creationTime")
     }
     
+    /*
+     Get the YelpAccessToken from keychain if it is still valid.
+     Return nil if no valid token found from keychain
+     */
     fileprivate func getValidTokenFromKeychain() -> YelpAccessToken? {
         let strongBox = Strongbox()
         
@@ -213,6 +222,9 @@ extension YelpClient {
         return YelpAccessToken(token: token, type: type, expiry: expiry, creationTime: creationTime)
     }
     
+    /*
+    Check the token is valid or expired.
+     */
     fileprivate func validateToken(creationTime: Double, expiry: Double) -> Bool {
         let currentTime = NSDate().timeIntervalSince1970
         if creationTime + expiry > currentTime {

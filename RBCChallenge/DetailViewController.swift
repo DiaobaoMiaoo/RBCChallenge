@@ -16,6 +16,7 @@ class DetailViewController: BaseViewController {
     @IBOutlet weak var streetLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var favButton: FavButton!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     var business: Business?
     var reviews = [Review]()
@@ -23,26 +24,36 @@ class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        guard let business = business else {
+            
+            return
+        }
+        
         detailTableView.estimatedRowHeight = 189.0
         detailTableView.rowHeight = UITableViewAutomaticDimension
         detailTableView.separatorStyle = .singleLine
         detailTableView.separatorColor = UIColor.themeColor
+        detailTableView.tableFooterView = UIView()
+        businessImageView.layer.cornerRadius = 3
         
-        // Do any additional setup after loading the view.
-        if let business = business {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.prominent)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = backgroundImageView.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        backgroundImageView.addSubview(blurEffectView)
             
-            // Set up the detail view for business
-            businessNameLabel.text = business.name ?? ""
-            businessImageView.sd_setImage(with: URL(string: business.imageUrl ?? ""), placeholderImage: UIImage(named: ""))
-            streetLabel.text = business.address.streetName ?? ""
-            cityLabel.text = business.address.cityName ?? ""
-            favButton.favorited = FavoriteManager.sharedInstance.alreadyInFavoriteFor(business: business)
-            favButton.addTarget(self, action: #selector(favButtonTapped(_:)), for: .touchUpInside)
-            // Fetch the most recent reviews and load them
-            YelpClient.sharedInstance.getReviewsFor(business: business) { message, reviews in
-                self.reviews = reviews ?? []
-                self.detailTableView.reloadData()
-            }
+        // Set up the detail view for business
+        businessNameLabel.text = business.name ?? ""
+        businessImageView.sd_setImage(with: URL(string: business.imageUrl ?? ""), placeholderImage: UIImage(named: "businessPlaceHolder"))
+        backgroundImageView.sd_setImage(with: URL(string: business.imageUrl ?? ""), placeholderImage: UIImage(named: "businessPlaceHolder"))
+        streetLabel.text = business.address.streetName ?? ""
+        cityLabel.text = business.address.cityName ?? ""
+        favButton.favorited = FavoriteManager.sharedInstance.alreadyInFavoriteFor(business: business)
+        favButton.addTarget(self, action: #selector(favButtonTapped(_:)), for: .touchUpInside)
+        // Fetch the most recent reviews and load them
+        YelpClient.sharedInstance.getReviewsFor(business: business) { message, reviews in
+            self.reviews = reviews ?? []
+            self.detailTableView.reloadData()
         }
     }
     

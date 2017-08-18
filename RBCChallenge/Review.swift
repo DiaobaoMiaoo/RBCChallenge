@@ -19,7 +19,7 @@ class Review {
     var url: String?
     var text: String?
     var reviewTime: String?
-    var rating: Int?
+    var rating: Double?
     var user = User()
 }
 
@@ -29,7 +29,7 @@ extension Review {
         url = json["url"].string
         text = json["text"].string
         reviewTime = json["time_created"].string
-        rating = json["rating"].int
+        rating = json["rating"].double
         user = User(imageUrl: json["user"]["image_url"].string,
                     name: json["user"]["name"].string)
         return self
