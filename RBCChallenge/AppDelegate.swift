@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         setUpSplitViewController()
+        setUpAppearanceForUIKit()
         setUpAppearanceForPopupDialog()
         return true
     }
@@ -71,7 +72,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         return false
     }
     
-    // MARK: -- Set Up Appearance for Popups
+    
+    // MARK: -- Set Up Appearance
+    
+    func setUpAppearanceForUIKit() {
+        UINavigationBar.appearance().barTintColor = UIColor.themeColor
+        UINavigationBar.appearance().tintColor = .white
+    }
+    
     func setUpAppearanceForPopupDialog() {
         
         // Customize dialog appearance

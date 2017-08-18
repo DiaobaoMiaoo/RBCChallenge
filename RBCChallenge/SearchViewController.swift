@@ -18,7 +18,7 @@ class SearchViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         // Get the Yelp access token
         YelpClient.sharedInstance.getAccessToken { message in
             print(message)
@@ -30,6 +30,8 @@ class SearchViewController: BaseViewController {
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
+        searchController.searchBar.barTintColor = UIColor.themeColor
+        searchController.searchBar.tintColor = .white
         definesPresentationContext = true
         suggestionTableView.tableHeaderView = searchController.searchBar
     }

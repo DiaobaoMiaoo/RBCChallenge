@@ -31,14 +31,17 @@ class SearchResultViewController: BaseViewController {
         
         // Do any additional setup after loading the view.
         if let keyword = keyword {
+            navigationItem.title = "Results"
             YelpClient.sharedInstance.getBusinessesWith(keyword: keyword,
                                                         latitude: LocationClient.sharedInstance.currentLocation?.latitude,
                                                         longitude: LocationClient.sharedInstance.currentLocation?.longitude) { message, businesses in
+                                                            
                                                             self.businesses = businesses ?? []
                                                             self.notSortedBusinesses = businesses ?? []
                                                             self.resultsCollectionView.reloadData()
             }
         } else {
+            navigationItem.title = "Favorites"
             businesses = FavoriteManager.sharedInstance.fetchAllFavorites()
             notSortedBusinesses = businesses
             resultsCollectionView.reloadData()

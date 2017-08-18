@@ -10,6 +10,7 @@ import UIKit
 
 class BusinessCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabelStreet: UILabel!
     @IBOutlet weak var addressLabelCity: UILabel!
@@ -29,9 +30,13 @@ class BusinessCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.themeColor.cgColor
         layer.cornerRadius = 3
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.prominent)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = backgroundImageView.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        backgroundImageView.addSubview(blurEffectView)
     }
     
     func setUpWith(business: Business) {
@@ -39,6 +44,10 @@ class BusinessCollectionViewCell: UICollectionViewCell {
         nameLabel.text = business.name
         addressLabelStreet.text = business.address.streetName
         addressLabelCity.text = business.address.cityName
+        
+        if let urlString = business.imageUrl, let url = URL(string: urlString) {
+            backgroundImageView.sd_setImage(with: url)
+        }
         favButton.favorited = FavoriteManager.sharedInstance.alreadyInFavoriteFor(business: business)
     }
     

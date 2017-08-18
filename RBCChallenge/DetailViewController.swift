@@ -23,6 +23,11 @@ class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        detailTableView.estimatedRowHeight = 189.0
+        detailTableView.rowHeight = UITableViewAutomaticDimension
+        detailTableView.separatorStyle = .singleLine
+        detailTableView.separatorColor = UIColor.themeColor
+        
         // Do any additional setup after loading the view.
         if let business = business {
             
@@ -38,8 +43,6 @@ class DetailViewController: BaseViewController {
                 self.reviews = reviews ?? []
                 self.detailTableView.reloadData()
             }
-        } else {
-        
         }
     }
     
@@ -68,7 +71,19 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Reviews"
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let label = UILabel(frame: CGRect(x: 10, y: 5, width: 320, height: 30))
+        label.text = "Reviews"
+        label.font = UIFont.boldSystemFont(ofSize: 23.0)
+        
+        let headerView = UIView()
+        headerView.addSubview(label)
+        headerView.backgroundColor = UIColor.themeColor
+        return headerView
     }
 }
