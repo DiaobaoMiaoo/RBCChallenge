@@ -38,11 +38,23 @@ class SearchResultViewController: BaseViewController {
         // Do any additional setup after loading the view.
         if let keyword = keyword {
             navigationItem.title = "Results"
+           
+            let indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
+            indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+            indicator.color = UIColor.themeColor
+            indicator.center = self.view.center
+            resultsCollectionView.addSubview(indicator)
+            indicator.startAnimating()
+            indicator.backgroundColor = UIColor.white
+            
             YelpClient.sharedInstance.getBusinessesWith(keyword: keyword,
                                                         latitude: LocationClient.sharedInstance.currentLocation?.latitude,
                                                         longitude: LocationClient.sharedInstance.currentLocation?.longitude) { message, businesses in
                                                             self.businesses = businesses ?? []
                                                             self.notSortedBusinesses = businesses ?? []
+                                                            
+                                                            indicator.stopAnimating()
+                                                            indicator.hidesWhenStopped = true
                                                             
                                                             if businesses?.count == 0 {
                                                                 self.noContentView.isHidden = false

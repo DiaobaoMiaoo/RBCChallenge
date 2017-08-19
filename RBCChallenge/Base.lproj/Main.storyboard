@@ -105,7 +105,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1aS-sT-idN" userLabel="NoContentView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQh-IP-Azy" userLabel="NoContentCabel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Fav" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQh-IP-Azy" userLabel="NoContentCabel">
                                         <rect key="frame" x="20" y="288.5" width="335" height="27.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
                                         <color key="textColor" red="0.92941176470588238" green="0.10980392156862745" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
@@ -137,16 +137,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="F4S-2K-qRr" userLabel="backgroundImage">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F4S-2K-qRr" userLabel="backgroundImage">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Molinari Delicatessen" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jl1-8C-Zx6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Molinari Delicatessen" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jl1-8C-Zx6">
                                                     <rect key="frame" x="10" y="10" width="130" height="55"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="55" id="g4k-bx-qaT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toronto, ON, Canada" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aP-a3-G5a">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toronto, ON, Canada" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aP-a3-G5a">
                                                     <rect key="frame" x="66.5" y="112" width="73.5" height="33"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -163,7 +166,7 @@
                                                         <action selector="favButtonTapped:" destination="KEa-J2-HNX" eventType="touchUpInside" id="vvj-BR-ff0"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="373 Columbus Ave" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfV-jI-954">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="373 Columbus Ave" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfV-jI-954">
                                                     <rect key="frame" x="60.5" y="79" width="79.5" height="33"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -187,8 +190,8 @@
                                             <constraint firstAttribute="bottom" secondItem="F4S-2K-qRr" secondAttribute="bottom" id="c76-8V-gtU"/>
                                             <constraint firstAttribute="trailing" secondItem="F4S-2K-qRr" secondAttribute="trailing" id="chQ-OS-dLG"/>
                                             <constraint firstItem="F4S-2K-qRr" firstAttribute="top" secondItem="KEa-J2-HNX" secondAttribute="top" id="g04-3g-XUc"/>
+                                            <constraint firstItem="KfV-jI-954" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jl1-8C-Zx6" secondAttribute="bottom" id="gAf-gf-1Gg"/>
                                             <constraint firstAttribute="bottom" secondItem="2wV-mF-7qa" secondAttribute="bottom" constant="10" id="kiz-Y4-m1L"/>
-                                            <constraint firstItem="KfV-jI-954" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jl1-8C-Zx6" secondAttribute="bottom" constant="10" id="tJy-M4-Vka"/>
                                         </constraints>
                                         <size key="customSize" width="150" height="150"/>
                                         <connections>
@@ -275,12 +278,12 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="businessPlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="iPZ-A6-dm7" userLabel="backgroundImageView">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Molinari Delicatessen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFs-g7-sKY" userLabel="NameLabel">
-                                            <rect key="frame" x="20" y="18" width="335" height="34.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Molinari Delicatessen and a suping long name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFs-g7-sKY" userLabel="NameLabel">
+                                            <rect key="frame" x="20" y="5" width="336" height="58"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="ROb-Jz-GAL"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="25"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -320,7 +323,7 @@
                                         <constraint firstItem="NFs-g7-sKY" firstAttribute="centerX" secondItem="xfP-KQ-iVl" secondAttribute="centerX" id="QJE-IL-WOP"/>
                                         <constraint firstAttribute="trailing" secondItem="iPZ-A6-dm7" secondAttribute="trailing" id="SFn-8P-HDW"/>
                                         <constraint firstAttribute="bottom" secondItem="e1j-RP-2mz" secondAttribute="bottom" constant="10" id="SJF-AX-mST"/>
-                                        <constraint firstItem="NFs-g7-sKY" firstAttribute="top" secondItem="xfP-KQ-iVl" secondAttribute="top" constant="18" id="bLk-Z5-Rfa"/>
+                                        <constraint firstItem="NFs-g7-sKY" firstAttribute="top" secondItem="xfP-KQ-iVl" secondAttribute="top" constant="5" id="bLk-Z5-Rfa"/>
                                         <constraint firstItem="U3D-x4-jd6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="a4H-CH-4vJ" secondAttribute="bottom" constant="10" id="dNB-ah-bYt"/>
                                         <constraint firstItem="yzf-1w-L71" firstAttribute="leading" secondItem="xfP-KQ-iVl" secondAttribute="leading" constant="20" id="dff-22-Bdt"/>
                                         <constraint firstAttribute="bottom" secondItem="yzf-1w-L71" secondAttribute="bottom" constant="20" id="fE8-RX-et3"/>
@@ -329,7 +332,7 @@
                                         <constraint firstItem="NFs-g7-sKY" firstAttribute="leading" secondItem="xfP-KQ-iVl" secondAttribute="leading" constant="20" id="kXD-jq-aYY"/>
                                         <constraint firstItem="a4H-CH-4vJ" firstAttribute="centerX" secondItem="xfP-KQ-iVl" secondAttribute="centerX" id="m7j-x5-wGR"/>
                                         <constraint firstItem="e1j-RP-2mz" firstAttribute="top" secondItem="U3D-x4-jd6" secondAttribute="bottom" constant="1" id="ndo-DZ-kwE"/>
-                                        <constraint firstItem="a4H-CH-4vJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="NFs-g7-sKY" secondAttribute="bottom" constant="10" id="qTq-F0-F5v"/>
+                                        <constraint firstItem="a4H-CH-4vJ" firstAttribute="top" secondItem="NFs-g7-sKY" secondAttribute="bottom" constant="2" id="qTq-F0-F5v"/>
                                         <constraint firstItem="a4H-CH-4vJ" firstAttribute="top" secondItem="xfP-KQ-iVl" secondAttribute="top" constant="65" id="sR7-eJ-Nnh"/>
                                     </constraints>
                                 </view>
