@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -48,8 +49,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7XF-cr-272" firstAttribute="top" secondItem="AbU-Sy-nyk" secondAttribute="bottom" id="6lR-5a-Z29"/>
-                            <constraint firstItem="AbU-Sy-nyk" firstAttribute="top" secondItem="uYc-kR-UUz" secondAttribute="bottom" constant="-64" id="73V-9i-TGo"/>
                             <constraint firstItem="AbU-Sy-nyk" firstAttribute="leading" secondItem="Y0o-Tu-9zJ" secondAttribute="leading" id="FiS-5e-uj2"/>
+                            <constraint firstItem="AbU-Sy-nyk" firstAttribute="top" secondItem="Y0o-Tu-9zJ" secondAttribute="topMargin" id="r3e-uF-aDk"/>
                             <constraint firstAttribute="trailing" secondItem="AbU-Sy-nyk" secondAttribute="trailing" id="tYh-ST-8zA"/>
                         </constraints>
                     </view>
@@ -140,7 +141,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F4S-2K-qRr" userLabel="backgroundImage">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Molinari Delicatessen" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jl1-8C-Zx6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Molinari Delicatessen" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jl1-8C-Zx6">
                                                     <rect key="frame" x="10" y="10" width="130" height="55"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="55" id="g4k-bx-qaT"/>
@@ -149,7 +150,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toronto, ON, Canada" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aP-a3-G5a">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toronto, ON, Canada" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aP-a3-G5a">
                                                     <rect key="frame" x="66.5" y="112" width="73.5" height="33"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -166,7 +167,7 @@
                                                         <action selector="favButtonTapped:" destination="KEa-J2-HNX" eventType="touchUpInside" id="vvj-BR-ff0"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="373 Columbus Ave" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfV-jI-954">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="373 Columbus Ave" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfV-jI-954">
                                                     <rect key="frame" x="60.5" y="79" width="79.5" height="33"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="12"/>
                                                     <nil key="textColor"/>
