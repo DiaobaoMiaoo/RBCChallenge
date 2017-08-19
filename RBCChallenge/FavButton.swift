@@ -32,9 +32,11 @@ class FavButton: UIButton {
             return
         }
         
-        if associatedId == id {
-            favorited = status
+        guard associatedId == id, status != favorited else {
+            return
         }
+        
+        favorited = status
     }
     
     deinit {

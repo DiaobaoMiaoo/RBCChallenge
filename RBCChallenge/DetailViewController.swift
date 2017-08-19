@@ -51,8 +51,11 @@ class DetailViewController: BaseViewController {
         favButton.favorited = FavoriteManager.sharedInstance.alreadyInFavoriteFor(business: business)
         favButton.associatedId = business.id
         favButton.addTarget(self, action: #selector(favButtonTapped(_:)), for: .touchUpInside)
+        
         // Fetch the most recent reviews and load them
+        detailTableView.activityIndicatorView.startAnimating()
         YelpClient.sharedInstance.getReviewsFor(business: business) { message, reviews in
+            self.detailTableView.activityIndicatorView.stopAnimating()
             self.reviews = reviews ?? []
             self.detailTableView.reloadData()
         }

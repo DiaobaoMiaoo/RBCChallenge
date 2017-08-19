@@ -11,6 +11,8 @@ import UIKit
 class SearchResultViewController: BaseViewController {
 
     @IBOutlet weak var resultsCollectionView: UICollectionView!
+    @IBOutlet weak var noContentView: UIView!
+    @IBOutlet weak var noContentLabel: UILabel!
     
     fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
     var keyword: String?
@@ -29,23 +31,37 @@ class SearchResultViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.noContentView.isHidden = true
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadFavorites), name: Notification.Name(NotificationConstants.favStatusChanged), object: nil)
+        
         // Do any additional setup after loading the view.
         if let keyword = keyword {
             navigationItem.title = "Results"
+            resultsCollectionView.activityIndicatorView.startAnimating()
             YelpClient.sharedInstance.getBusinessesWith(keyword: keyword,
                                                         latitude: LocationClient.sharedInstance.currentLocation?.latitude,
                                                         longitude: LocationClient.sharedInstance.currentLocation?.longitude) { message, businesses in
-                                                            
+                                                            self.resultsCollectionView.activityIndicatorView.stopAnimating()
                                                             self.businesses = businesses ?? []
                                                             self.notSortedBusinesses = businesses ?? []
+                                                            
+                                                            if businesses?.count == 0 {
+                                                                self.noContentView.isHidden = false
+                                                                self.noContentLabel.text = "No results found for your keyword. Please try something different."
+                                                            } else {
+                                                                self.noContentView.isHidden = true
+                                                            }
                                                             self.resultsCollectionView.reloadData()
             }
         } else {
             navigationItem.title = "Favorites"
-            businesses = FavoriteManager.sharedInstance.fetchAllFavorites()
-            notSortedBusinesses = businesses
-            resultsCollectionView.reloadData()
+            loadFavorites()
         }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name(NotificationConstants.favStatusChanged), object: nil)
     }
 }
 
@@ -149,11 +165,22 @@ extension SearchResultViewController {
 // MARK: -- Favorites Handling
 extension SearchResultViewController: BusinessCollectionViewCellDelegate {
     
+    func loadFavorites() {
+        businesses = FavoriteManager.sharedInstance.fetchAllFavorites()
+        notSortedBusinesses = businesses
+        
+        if businesses.count == 0 {
+            noContentView.isHidden = false
+            noContentLabel.text = "No favorites yet. Browse the restaurants and add the ones you like!"
+        } else {
+            noContentView.isHidden = true
+        }
+        resultsCollectionView.reloadData()
+    }
+    
     func reloadFavorites() {
         if keyword == nil {
-            businesses = FavoriteManager.sharedInstance.fetchAllFavorites()
-            notSortedBusinesses = businesses
-            resultsCollectionView.reloadData()
+            loadFavorites()
         }
     }
 }

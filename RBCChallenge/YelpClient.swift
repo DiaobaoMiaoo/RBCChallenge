@@ -98,10 +98,11 @@ extension YelpClient {
         
         let searchURL = URL(string: YelpURLs.search)!
         let headers = ["Authorization": type + " " + token]
-        let parameters: [String: Any] = ["term": keyword + " Restaurant",
+        let parameters: [String: Any] = ["term": keyword,
                                          "latitude": latitude ?? "43.646046",
                                          "longitude": longitude ?? "-79.385487",
-                                         "limit": limit]
+                                         "limit": limit,
+                                         "categories": "restaurants"]
         
         Alamofire.request(searchURL, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { response in
             
