@@ -19,4 +19,25 @@ class FavButton: UIButton {
             }
         }
     }
+    
+    var associatedId: String?
+    
+    override func awakeFromNib() {
+        NotificationCenter.default.addObserver(self, selector: #selector(favStatusChanged(notification:)), name: Notification.Name(NotificationConstants.favStatusChanged), object: nil)
+    }
+    
+    func favStatusChanged(notification: Notification){
+        
+        guard let id = notification.userInfo?["id"] as? String, let status = notification.userInfo?["status"] as? Bool else {
+            return
+        }
+        
+        if associatedId == id {
+            favorited = status
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name(NotificationConstants.favStatusChanged), object: nil)
+    }
 }

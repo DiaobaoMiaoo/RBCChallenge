@@ -49,6 +49,7 @@ class DetailViewController: BaseViewController {
         streetLabel.text = business.address.streetName ?? ""
         cityLabel.text = business.address.cityName ?? ""
         favButton.favorited = FavoriteManager.sharedInstance.alreadyInFavoriteFor(business: business)
+        favButton.associatedId = business.id
         favButton.addTarget(self, action: #selector(favButtonTapped(_:)), for: .touchUpInside)
         // Fetch the most recent reviews and load them
         YelpClient.sharedInstance.getReviewsFor(business: business) { message, reviews in
@@ -67,6 +68,10 @@ class DetailViewController: BaseViewController {
         } else {
             FavoriteManager.sharedInstance.remove(business: business)
         }
+        
+        NotificationCenter.default.post(name: Notification.Name(NotificationConstants.favStatusChanged),
+                                        object: nil,
+                                        userInfo: ["id": business.id ?? "", "status": favButton.favorited])
     }
 }
 

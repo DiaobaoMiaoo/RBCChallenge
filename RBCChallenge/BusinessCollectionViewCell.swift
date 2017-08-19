@@ -23,6 +23,10 @@ class BusinessCollectionViewCell: UICollectionViewCell {
         } else {
             FavoriteManager.sharedInstance.remove(business: currentBusiness)
         }
+        
+        NotificationCenter.default.post(name: Notification.Name(NotificationConstants.favStatusChanged),
+                                        object: nil,
+                                        userInfo: ["id": currentBusiness.id ?? "", "status": favButton.favorited])
     }
     
     var currentBusiness: Business!
@@ -49,6 +53,7 @@ class BusinessCollectionViewCell: UICollectionViewCell {
             backgroundImageView.sd_setImage(with: url)
         }
         favButton.favorited = FavoriteManager.sharedInstance.alreadyInFavoriteFor(business: business)
+        favButton.associatedId = business.id
     }
     
     override func prepareForReuse() {

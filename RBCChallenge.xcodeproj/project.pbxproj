@@ -14,6 +14,7 @@
 		4D0C94411F4695A800ED0105 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C94401F4695A800ED0105 /* BaseViewController.swift */; };
 		4D0C94471F4740D300ED0105 /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C94461F4740D300ED0105 /* FavoriteManager.swift */; };
 		4D0C944B1F474D1F00ED0105 /* FavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C944A1F474D1F00ED0105 /* FavButton.swift */; };
+		4D0C94511F47B29400ED0105 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C94501F47B29400ED0105 /* Constant.swift */; };
 		4D8146021F44A2C100696404 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146011F44A2C100696404 /* Business.swift */; };
 		4D8146041F44CA5100696404 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146031F44CA5100696404 /* Review.swift */; };
 		4D81460A1F45360F00696404 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8146091F45360F00696404 /* SearchViewController.swift */; };
@@ -51,6 +52,7 @@
 		4D0C94401F4695A800ED0105 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4D0C94461F4740D300ED0105 /* FavoriteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteManager.swift; sourceTree = "<group>"; };
 		4D0C944A1F474D1F00ED0105 /* FavButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavButton.swift; sourceTree = "<group>"; };
+		4D0C94501F47B29400ED0105 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		4D8146011F44A2C100696404 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		4D8146031F44CA5100696404 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		4D8146091F45360F00696404 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				4D0C94461F4740D300ED0105 /* FavoriteManager.swift */,
+				4D0C94501F47B29400ED0105 /* Constant.swift */,
 			);
 			name = Storage;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				4D0C94411F4695A800ED0105 /* BaseViewController.swift in Sources */,
 				4DDF5F031F436E5F0066EC85 /* AppDelegate.swift in Sources */,
 				4D0C944B1F474D1F00ED0105 /* FavButton.swift in Sources */,
+				4D0C94511F47B29400ED0105 /* Constant.swift in Sources */,
 				4D81460C1F45364600696404 /* SuggestionTableViewCell.swift in Sources */,
 				4D0C94371F463B4A00ED0105 /* UIColor+Extension.swift in Sources */,
 				4D0C943D1F46507F00ED0105 /* ResultsCollectionViewHeader.swift in Sources */,
