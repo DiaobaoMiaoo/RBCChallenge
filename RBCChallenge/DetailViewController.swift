@@ -24,8 +24,12 @@ class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.leftBarButtonItem = nil
+        
         guard let business = business else {
-            
+            let placeHolderView = UIView(frame: view.frame)
+            placeHolderView.backgroundColor = UIColor.white
+            view.addSubview(placeHolderView)
             return
         }
         
