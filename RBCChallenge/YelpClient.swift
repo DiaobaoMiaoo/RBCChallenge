@@ -98,7 +98,7 @@ extension YelpClient {
         
         let searchURL = URL(string: YelpURLs.search)!
         let headers = ["Authorization": type + " " + token]
-        let parameters: [String: Any] = ["term": keyword,
+        let parameters: [String: Any] = ["term": keyword + " Restaurant",
                                          "latitude": latitude ?? "43.646046",
                                          "longitude": longitude ?? "-79.385487",
                                          "limit": limit]
@@ -135,7 +135,12 @@ extension YelpClient {
             return
         }
         
-        let reviewURL = URL(string: YelpURLs.reviews + "\(id)/reviews")!
+        // "Id" might contain special characters. So we need to process the url a little bit more.
+        let urlString = YelpURLs.reviews + "\(id)/reviews"
+        guard let encoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed), let reviewURL = URL(string: encoded) else {
+            return
+        }
+        
         let headers = ["Authorization": type + " " + token]
         
         Alamofire.request(reviewURL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON { response in

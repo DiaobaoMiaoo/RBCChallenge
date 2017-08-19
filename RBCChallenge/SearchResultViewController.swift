@@ -59,6 +59,7 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = resultsCollectionView.dequeueReusableCell(withReuseIdentifier: "BusinessCollectionViewCell", for: indexPath) as! BusinessCollectionViewCell
         cell.setUpWith(business: businesses[indexPath.row])
+        cell.delegate = self
         return cell
     }
     
@@ -142,5 +143,17 @@ extension SearchResultViewController {
             businesses = notSortedBusinesses
         }
         resultsCollectionView.reloadData()
+    }
+}
+
+// MARK: -- Favorites Handling
+extension SearchResultViewController: BusinessCollectionViewCellDelegate {
+    
+    func reloadFavorites() {
+        if keyword == nil {
+            businesses = FavoriteManager.sharedInstance.fetchAllFavorites()
+            notSortedBusinesses = businesses
+            resultsCollectionView.reloadData()
+        }
     }
 }

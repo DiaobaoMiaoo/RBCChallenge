@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol BusinessCollectionViewCellDelegate {
+    func reloadFavorites()
+}
+
 class BusinessCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -27,9 +31,14 @@ class BusinessCollectionViewCell: UICollectionViewCell {
         NotificationCenter.default.post(name: Notification.Name(NotificationConstants.favStatusChanged),
                                         object: nil,
                                         userInfo: ["id": currentBusiness.id ?? "", "status": favButton.favorited])
+        
+        if delegate != nil {
+            delegate!.reloadFavorites()
+        }
     }
     
     var currentBusiness: Business!
+    var delegate: BusinessCollectionViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()

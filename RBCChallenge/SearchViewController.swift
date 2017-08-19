@@ -57,16 +57,12 @@ extension SearchViewController {
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return suggestions.count == 0 ? 1 : suggestions.count
+        return suggestions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SuggestionTableViewCell", for: indexPath) as! SuggestionTableViewCell
-        if suggestions.count == 0 {
-            cell.textLabel?.text = "Input your search keyword for suggestions."
-        } else {
             cell.textLabel?.text = suggestions[indexPath.row]
-        }
         return cell
     }
 }
